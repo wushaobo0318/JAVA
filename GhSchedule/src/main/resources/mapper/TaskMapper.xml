@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ghqkl.schedule.dao.TaskDao">
+	<resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.TaskBean">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="cron" property="cron" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+
+	</resultMap>
+	<sql id="find">
+	     <if test="id!=null">and id = #{id}</if>
+         <if test="status!=null">and status = #{status}</if>
+         <if test="name!=null">and name = #{name}</if>
+    </sql>
+    <select id="getById" resultMap="BaseResultMap">
+       select * from cjhj_task where id = #{id}
+    </select>
+    <select id="queryAll" resultMap="BaseResultMap">
+       select * from cjhj_task
+    </select>
+    
+    <select id="queryList" resultMap="BaseResultMap" parameterType="com.ghqkl.schedule.model.TaskBean">
+        select * from cjhj_task where 1=1
+         <include refid="find" />
+    </select>
+    <select id="count" resultType="long"  parameterType="com.ghqkl.schedule.model.TaskBean">
+        select count(1) from cjhj_task where 1=1
+        <where>
+        <include refid="find" />
+        </where> 
+    </select>
+    <!-- 更新币的价格 -->
+    <insert id="insert" parameterType="com.ghqkl.schedule.model.TaskBean">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+      	</selectKey>
+        insert into cjhj_task(name,cron,remark)
+         values(#{name},#{cron},#{remark})
+    </insert>
+    <update id="update" parameterType="com.ghqkl.schedule.model.TaskBean" >
+        update cjhj_task
+        <set>
+            <if test="name!=null">name=#{name},</if>
+            <if test="cron!=null">cron=#{cron},</if>
+            <if test="status!=null">status=#{status},</if>
+            <if test="remark!=null">remark=#{remark},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

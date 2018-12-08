@@ -1,0 +1,123 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.MiningConfigDao">
+
+<resultMap type="com.gh.xiangsu.entity.MiningConfig" id="cjhj_mining_configs">
+	<id property  = "id" column= "id"/>
+	<result property  = "numStart" column= "num_start"/>
+	<result property  = "numEnd" column= "num_end"/>
+	<result property  = "spoceNum" column= "spoce_num"/>
+	<result property  = "lastNum" column= "last_num"/>
+	<result property  = "miningOpen" column= "mining_open"/>
+	<result property  = "leastNum" column= "least_num"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , num_start , num_end , spoce_num , last_num , mining_open , least_num	
+</sql>	
+<!--添加cjhj_mining_config-->
+ <insert id="addMiningConfig" parameterType="com.gh.xiangsu.entity.MiningConfig">                                                                                                                      
+ 		insert into cjhj_mining_config(id,num_start,num_end,spoce_num,last_num,mining_open,least_num) values(#{id},#{numStart},#{numEnd},#{spoceNum},#{lastNum},#{miningOpen},#{leastNum})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除cjhj_mining_config-->
+ <delete id="delMiningConfigTrue"  parameterType="String">                                                                                                                                                                       
+     delete from cjhj_mining_config where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改cjhj_mining_config-->
+ <update id="updateMiningConfig" parameterType="com.gh.xiangsu.entity.MiningConfig">                                                                                                                                           
+     update cjhj_mining_config set num_start = #{numStart},num_end = #{numEnd},spoce_num = #{spoceNum},last_num = #{lastNum},mining_open = #{miningOpen},least_num = #{leastNum} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键cjhj_mining_config-->
+ <select id="selectMiningConfigByID" parameterType="String" resultMap="cjhj_mining_configs">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from cjhj_mining_config where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数cjhj_mining_config-->
+ <select id="selectMiningConfigCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from cjhj_mining_config                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数cjhj_mining_config-->
+ <select id="selectMiningConfigCountAll" parameterType="String" resultMap="cjhj_mining_configs">                                                                                                                                   
+     select count('1') from cjhj_mining_config                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件cjhj_mining_config-->
+<select id="selectMiningConfigsByPOJO" parameterType="com.gh.xiangsu.entity.MiningConfig"  resultMap="cjhj_mining_configs">
+	select 
+ <include refid="Base_Column_List" /> 
+ from cjhj_mining_config where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="numStart != null and numStart != '' "> 
+ and num_start = #{numStart} 
+</if>
+	<if test="numEnd != null and numEnd != '' "> 
+ and num_end = #{numEnd} 
+</if>
+	<if test="spoceNum != null and spoceNum != '' "> 
+ and spoce_num = #{spoceNum} 
+</if>
+	<if test="lastNum != null and lastNum != '' "> 
+ and last_num = #{lastNum} 
+</if>
+	<if test="miningOpen != null and miningOpen != '' "> 
+ and mining_open = #{miningOpen} 
+</if>
+	<if test="leastNum != null and leastNum != '' "> 
+ and least_num = #{leastNum} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数cjhj_mining_config-->
+<select id="selectMiningConfigsByPOJOCount" parameterType="com.gh.xiangsu.entity.MiningConfig"  resultType="Integer">
+	select count('1') from cjhj_mining_config where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="numStart != null and numStart != '' "> 
+ and num_start = #{numStart} 
+</if>
+	<if test="numEnd != null and numEnd != '' "> 
+ and num_end = #{numEnd} 
+</if>
+	<if test="spoceNum != null and spoceNum != '' "> 
+ and spoce_num = #{spoceNum} 
+</if>
+	<if test="lastNum != null and lastNum != '' "> 
+ and last_num = #{lastNum} 
+</if>
+	<if test="miningOpen != null and miningOpen != '' "> 
+ and mining_open = #{miningOpen} 
+</if>
+	<if test="leastNum != null and leastNum != '' "> 
+ and least_num = #{leastNum} 
+</if>
+</select>
+<!--查询根据条件分页查询cjhj_mining_config-->
+<select id="selectMiningConfigsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_mining_configs">
+	select <include refid="Base_Column_List" /> from cjhj_mining_config where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.numStart != null and pojo.numStart != ''"> 
+ and num_start = #{pojo.numStart} 
+</if>
+	<if test="pojo.numEnd != null and pojo.numEnd != ''"> 
+ and num_end = #{pojo.numEnd} 
+</if>
+	<if test="pojo.spoceNum != null and pojo.spoceNum != ''"> 
+ and spoce_num = #{pojo.spoceNum} 
+</if>
+	<if test="pojo.lastNum != null and pojo.lastNum != ''"> 
+ and last_num = #{pojo.lastNum} 
+</if>
+	<if test="pojo.miningOpen != null and pojo.miningOpen != ''"> 
+ and mining_open = #{pojo.miningOpen} 
+</if>
+	<if test="pojo.leastNum != null and pojo.leastNum != ''"> 
+ and least_num = #{pojo.leastNum} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

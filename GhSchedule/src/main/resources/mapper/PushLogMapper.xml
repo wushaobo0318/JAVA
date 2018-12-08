@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ghqkl.schedule.dao.PushLogDao" >
+  <resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.PushLogBean" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+	<result column="platform_id" property="platformId" jdbcType="INTEGER" />
+	<result column="title" property="title" jdbcType="VARCHAR" />
+	<result column="type" property="type" jdbcType="INTEGER" />
+	<result column="content" property="content" jdbcType="VARCHAR" /> 
+	<result column="time" property="time" jdbcType="TIMESTAMP" />
+	<result column="status" property="status" jdbcType="VARCHAR" />
+	<result column="num" property="num" jdbcType="INTEGER" />   
+	<result column="phone_type" property="phoneType" jdbcType="INTEGER" />
+	<result column="condition" property="condition" jdbcType="VARCHAR" />
+  </resultMap>
+   
+    <select id="queryAll" resultMap="BaseResultMap">
+    	select * from cjhj_push_log
+    </select>
+    <select id="queryList" resultMap="BaseResultMap" parameterType="com.ghqkl.schedule.model.PushLogBean">
+    	select * from cjhj_push_log
+	</select>    
+  	<select id="queryNeedPushList" resultMap="BaseResultMap" parameterType="com.ghqkl.schedule.model.PushLogBean">
+    	select * from cjhj_push_log where platform_id=1 and status=0 and time&lt;#{time} 
+	</select>   
+    <insert id="insert" parameterType="com.ghqkl.schedule.model.PushLogBean">
+        INSERT into cjhj_push_log(platform_id,title,type,content,time,phone_type,`condition`) VALUES(
+          <if test="platform_id != null">
+               #{platform_id}
+         </if>
+         <if test="title != null">
+               ,#{title}
+         </if>
+         <if test="type != null">
+               ,#{type}
+         </if>
+         <if test="content != null">
+               ,#{content}
+         </if>
+         <if test="time != null">
+               ,#{time}
+         </if>
+         <if test="phone_type != null">
+               ,#{phone_type}
+         </if>
+         <if test="condition != null">
+               ,#{condition}
+         </if>
+        )
+    </insert>
+   <update id="update" parameterType="com.ghqkl.schedule.model.PushLogBean" >
+        update cjhj_push_log
+        <set>
+            <if test="num!=null">num=#{num},</if>
+        	<if test="status!=null">status=#{status},</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

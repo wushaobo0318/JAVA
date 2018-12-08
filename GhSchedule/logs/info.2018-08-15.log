@@ -1,0 +1,389 @@
+2018-08-15 11:10:34,099 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7628 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:10:34,101 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:10:34,135 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4d32b91b: startup date [Wed Aug 15 11:10:34 CST 2018]; root of context hierarchy
+2018-08-15 11:10:35,077 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6fcac756] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-15 11:10:35,284 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2018-08-15 11:10:35,293 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2018-08-15 11:10:35,299 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-15 11:10:35,299 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-15 11:10:35,302 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_121\bin;D:\apache-maven-3.5.3\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\TortoiseSVN\bin;C:\Windows\System32;D:\Program Files\nodejs\;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\Users\Administrator\AppData\Roaming\npm;D:\tools\eclipse;;.]
+2018-08-15 11:10:35,357 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-15 11:10:35,358 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1222 ms
+2018-08-15 11:10:35,443 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-08-15 11:10:35,447 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-15 11:10:35,447 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-15 11:10:35,447 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-15 11:10:35,447 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-15 11:10:35,571 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-15 11:16:36,317 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 6068 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:16:36,321 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:16:36,506 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10e9494b: startup date [Wed Aug 15 11:16:36 CST 2018]; root of context hierarchy
+2018-08-15 11:16:37,874 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$74540fab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-08-15 11:16:38,376 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2018-08-15 11:16:38,393 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2018-08-15 11:16:38,404 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-15 11:16:38,404 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-08-15 11:16:38,413 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_121\bin;D:\apache-maven-3.5.3\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\TortoiseSVN\bin;C:\Windows\System32;D:\Program Files\nodejs\;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\Users\Administrator\AppData\Roaming\npm;D:\tools\eclipse;;.]
+2018-08-15 11:16:38,599 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-15 11:16:38,600 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2094 ms
+2018-08-15 11:16:38,751 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-08-15 11:16:38,756 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-08-15 11:16:38,757 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-08-15 11:16:38,757 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-08-15 11:16:38,757 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-08-15 11:16:39,154 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-15 11:16:39,401 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@10e9494b: startup date [Wed Aug 15 11:16:36 CST 2018]; root of context hierarchy
+2018-08-15 11:16:39,503 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-08-15 11:16:39,505 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-08-15 11:16:39,536 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-15 11:16:39,536 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-08-15 11:16:39,889 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 11:16:39,917 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 11:16:39,919 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 11:16:39,925 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 11:16:39,937 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 11:16:39,947 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2018-08-15 11:16:39,957 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-08-15 11:16:39,971 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2018-08-15 11:16:39,976 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 4.138 seconds (JVM running for 4.489)
+2018-08-15 11:31:09,928 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7736 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:31:09,930 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:31:09,992 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 11:31:09 CST 2018]; root of context hierarchy
+2018-08-15 11:31:12,226 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 11:31:12,251 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 11:31:12,252 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 11:31:12,261 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 11:31:12,276 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 11:31:12,294 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.759 seconds (JVM running for 3.184)
+2018-08-15 11:32:19,448 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 2700 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:32:19,453 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:32:19,517 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 11:32:19 CST 2018]; root of context hierarchy
+2018-08-15 11:32:21,359 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 11:32:21,382 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 11:32:21,383 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 11:32:21,388 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 11:32:21,399 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 11:32:21,411 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.411 seconds (JVM running for 2.732)
+2018-08-15 11:44:09,501 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 8164 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:44:09,503 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:44:09,552 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 11:44:09 CST 2018]; root of context hierarchy
+2018-08-15 11:44:55,698 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7964 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:44:55,700 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:44:55,761 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 11:44:55 CST 2018]; root of context hierarchy
+2018-08-15 11:45:30,073 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 2960 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 11:45:30,075 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 11:45:30,097 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@13910d9b: startup date [Wed Aug 15 11:45:30 CST 2018]; root of context hierarchy
+2018-08-15 11:45:30,943 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 11:45:30,955 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 11:45:30,956 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 11:45:30,959 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 11:45:30,965 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 11:45:30,970 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 1.136 seconds (JVM running for 1.555)
+2018-08-15 11:45:33,062 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 11:45:33,728 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 11:45:42,396 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2018-08-15 11:45:42,400 [RMI TCP Connection(2)-127.0.0.1] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@13910d9b: startup date [Wed Aug 15 11:45:30 CST 2018]; root of context hierarchy
+2018-08-15 11:45:42,405 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 11:45:42,415 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 14:57:38,755 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 6760 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 14:57:38,760 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 14:57:38,836 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@19052377: startup date [Wed Aug 15 14:57:38 CST 2018]; root of context hierarchy
+2018-08-15 14:58:39,510 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1836 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 14:58:39,515 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 14:58:39,587 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3f95f34a: startup date [Wed Aug 15 14:58:39 CST 2018]; root of context hierarchy
+2018-08-15 14:58:42,221 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 14:58:42,247 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 14:58:42,249 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 14:58:42,273 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 14:58:42,289 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 14:58:42,309 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 3.617 seconds (JVM running for 8.53)
+2018-08-15 14:59:11,166 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 14:59:18,826 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 14:59:22,447 [pool-1-thread-1] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2018-08-15 15:01:14,453 [Thread-6] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@3f95f34a: startup date [Wed Aug 15 14:58:39 CST 2018]; root of context hierarchy
+2018-08-15 15:01:14,459 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 15:01:14,466 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 15:01:14,625 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1836 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:01:14,626 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:01:14,633 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7ff2d05b: startup date [Wed Aug 15 15:01:14 CST 2018]; root of context hierarchy
+2018-08-15 15:01:15,235 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:01:15,247 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:01:15,248 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:01:15,250 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:01:15,256 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:01:15,260 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.693 seconds (JVM running for 161.476)
+2018-08-15 15:01:15,284 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 15:02:03,499 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 5780 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:02:03,506 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:02:03,600 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3d3cd39d: startup date [Wed Aug 15 15:02:03 CST 2018]; root of context hierarchy
+2018-08-15 15:02:06,009 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:02:06,036 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:02:06,038 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:02:06,048 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:02:06,062 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:02:06,081 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 3.653 seconds (JVM running for 6.352)
+2018-08-15 15:02:21,467 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1044 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:02:21,472 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:02:21,548 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@60d36edb: startup date [Wed Aug 15 15:02:21 CST 2018]; root of context hierarchy
+2018-08-15 15:02:24,029 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:02:24,058 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:02:24,059 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:02:24,068 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:02:24,085 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:02:24,105 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 3.94 seconds (JVM running for 6.0)
+2018-08-15 15:03:04,570 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 15:03:12,313 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 15:12:08,057 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7656 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:12:08,061 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:12:08,141 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 15:12:08 CST 2018]; root of context hierarchy
+2018-08-15 15:12:09,820 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:12:09,842 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:12:09,843 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:12:09,848 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:12:09,858 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:12:09,875 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.292 seconds (JVM running for 2.643)
+2018-08-15 15:13:00,075 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 15:13:00,803 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 15:13:01,090 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群begin miningThread!
+2018-08-15 15:13:01,091 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群begin miningThread!
+2018-08-15 15:13:01,090 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群begin miningThread!
+2018-08-15 15:13:01,090 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群begin miningThread!
+2018-08-15 15:13:01,966 [Thread-10] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2018-08-15 15:14:03,778 [Thread-6] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 15:12:08 CST 2018]; root of context hierarchy
+2018-08-15 15:14:03,783 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 15:14:03,794 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 15:14:03,917 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7656 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:14:03,918 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:14:03,922 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@465d075a: startup date [Wed Aug 15 15:14:03 CST 2018]; root of context hierarchy
+2018-08-15 15:14:04,322 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:14:04,330 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:14:04,331 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:14:04,334 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:14:04,337 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:14:04,338 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.462 seconds (JVM running for 117.102)
+2018-08-15 15:14:04,340 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 15:14:15,682 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1880 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:14:15,685 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:14:15,738 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7e87695: startup date [Wed Aug 15 15:14:15 CST 2018]; root of context hierarchy
+2018-08-15 15:14:17,673 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:14:17,694 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:14:17,696 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:14:17,703 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:14:17,714 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:14:17,726 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.435 seconds (JVM running for 2.767)
+2018-08-15 15:15:00,073 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 15:15:00,767 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 15:15:01,030 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群begin miningThread!
+2018-08-15 15:15:01,031 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群begin miningThread!
+2018-08-15 15:15:01,032 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群begin miningThread!
+2018-08-15 15:15:01,037 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群begin miningThread!
+2018-08-15 15:16:31,718 [Thread-6] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@7e87695: startup date [Wed Aug 15 15:14:15 CST 2018]; root of context hierarchy
+2018-08-15 15:16:31,725 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 15:16:31,734 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 15:16:31,861 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1880 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:16:31,862 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:16:31,865 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4ad9c6cc: startup date [Wed Aug 15 15:16:31 CST 2018]; root of context hierarchy
+2018-08-15 15:16:32,261 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:16:32,270 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:16:32,271 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:16:32,273 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:16:32,277 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:16:32,279 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.459 seconds (JVM running for 137.316)
+2018-08-15 15:16:32,282 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 15:16:52,685 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1508 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:16:52,688 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:16:52,741 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7e87695: startup date [Wed Aug 15 15:16:52 CST 2018]; root of context hierarchy
+2018-08-15 15:16:54,519 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:16:54,545 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:16:54,546 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:16:54,552 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:16:54,564 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:16:54,578 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.28 seconds (JVM running for 2.695)
+2018-08-15 15:17:00,073 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 15:17:00,730 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 15:17:01,018 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群begin miningThread!
+2018-08-15 15:17:01,020 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群begin miningThread!
+2018-08-15 15:17:01,021 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群begin miningThread!
+2018-08-15 15:17:01,021 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群begin miningThread!
+2018-08-15 15:18:15,972 [Thread-6] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@7e87695: startup date [Wed Aug 15 15:16:52 CST 2018]; root of context hierarchy
+2018-08-15 15:18:15,980 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 15:18:15,992 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 15:18:16,144 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 1508 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:18:16,144 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:18:16,149 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@67090c37: startup date [Wed Aug 15 15:18:16 CST 2018]; root of context hierarchy
+2018-08-15 15:18:16,554 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:18:16,562 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:18:16,563 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:18:16,564 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:18:16,569 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:18:16,570 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.475 seconds (JVM running for 84.684)
+2018-08-15 15:18:16,572 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 15:18:53,975 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 4792 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:18:53,979 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:18:54,025 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 15:18:54 CST 2018]; root of context hierarchy
+2018-08-15 15:18:55,765 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:18:55,790 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:18:55,791 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:18:55,797 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:18:55,808 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:18:55,824 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.261 seconds (JVM running for 2.644)
+2018-08-15 15:19:00,073 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 15:19:00,758 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 15:19:01,025 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群begin miningThread!
+2018-08-15 15:19:01,026 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群begin miningThread!
+2018-08-15 15:19:01,027 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群begin miningThread!
+2018-08-15 15:19:01,025 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群begin miningThread!
+2018-08-15 15:19:01,952 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群 userId:77 get 0.06745093615282906spg!
+2018-08-15 15:19:02,012 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群 userId:77 get 0.0044066655250633805spg!
+2018-08-15 15:19:02,026 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群 userId:77 get 0.04921693055358737spg!
+2018-08-15 15:19:02,097 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群 userId:77 get 0.005640588788941603spg!
+2018-08-15 15:19:02,139 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群 userId:80 get 0.07333618455601545spg!
+2018-08-15 15:19:02,195 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群 userId:80 get 0.06669944657936068spg!
+2018-08-15 15:19:02,215 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群 userId:80 get 0.05535927256245121spg!
+2018-08-15 15:19:02,299 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群 userId:80 get 0.098102483495877spg!
+2018-08-15 15:21:28,036 [Thread-6] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 15:18:54 CST 2018]; root of context hierarchy
+2018-08-15 15:21:28,041 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 15:21:28,046 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 15:21:28,195 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 4792 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:21:28,196 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:21:28,222 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@77163da7: startup date [Wed Aug 15 15:21:28 CST 2018]; root of context hierarchy
+2018-08-15 15:21:28,616 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:21:28,625 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:21:28,626 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:21:28,629 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:21:28,633 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:21:28,635 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.502 seconds (JVM running for 155.45)
+2018-08-15 15:21:28,638 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 15:21:32,477 [Thread-13] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@77163da7: startup date [Wed Aug 15 15:21:28 CST 2018]; root of context hierarchy
+2018-08-15 15:21:32,711 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 4792 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:21:32,712 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:21:32,715 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@37d12688: startup date [Wed Aug 15 15:21:32 CST 2018]; root of context hierarchy
+2018-08-15 15:21:51,696 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7304 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 15:21:51,698 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 15:21:51,752 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@19505afb: startup date [Wed Aug 15 15:21:51 CST 2018]; root of context hierarchy
+2018-08-15 15:21:53,535 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 15:21:53,562 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 15:21:53,564 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 15:21:53,571 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 15:21:53,584 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 15:21:53,596 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.356 seconds (JVM running for 2.703)
+2018-08-15 15:22:00,082 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 15:22:00,743 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 15:22:01,010 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群begin miningThread!
+2018-08-15 15:22:01,010 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群begin miningThread!
+2018-08-15 15:22:01,012 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群begin miningThread!
+2018-08-15 15:22:01,014 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群begin miningThread!
+2018-08-15 15:22:01,822 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群 userId:77 get 0.035337258901595635spg!
+2018-08-15 15:22:01,984 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群 userId:77 get 0.005310741408835718spg!
+2018-08-15 15:22:02,011 [Thread-9] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:中国服务器集群 userId:80 get 0.019966303584651946spg!
+2018-08-15 15:22:02,070 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群 userId:77 get 0.05644295565202935spg!
+2018-08-15 15:22:02,072 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群 userId:77 get 0.0978655756110326spg!
+2018-08-15 15:22:02,159 [Thread-12] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:老挝服务器集群 userId:80 get 0.006060855416335919spg!
+2018-08-15 15:22:02,261 [Thread-10] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:香港服务器集群 userId:80 get 0.05638260974711494spg!
+2018-08-15 15:22:02,265 [Thread-11] INFO  com.ghqkl.schedule.task.ScheduledTasks$miningThread - server:美国服务器集群 userId:80 get 0.09816594082974647spg!
+2018-08-15 16:23:27,120 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 5964 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:23:27,122 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:23:27,167 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 16:23:27 CST 2018]; root of context hierarchy
+2018-08-15 16:24:13,957 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7372 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:24:13,960 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:24:13,996 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 16:24:13 CST 2018]; root of context hierarchy
+2018-08-15 16:25:44,955 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7748 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:25:44,959 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:25:45,042 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 16:25:45 CST 2018]; root of context hierarchy
+2018-08-15 16:27:09,369 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7964 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:27:09,371 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:27:09,434 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4b2cc48e: startup date [Wed Aug 15 16:27:09 CST 2018]; root of context hierarchy
+2018-08-15 16:46:05,330 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 5008 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:46:05,332 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:46:05,394 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 16:46:05 CST 2018]; root of context hierarchy
+2018-08-15 16:48:02,044 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7220 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:48:02,046 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:48:02,091 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 16:48:02 CST 2018]; root of context hierarchy
+2018-08-15 16:48:03,848 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:48:03,871 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:48:03,872 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:48:03,877 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:48:03,888 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:48:03,900 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.229 seconds (JVM running for 2.529)
+2018-08-15 16:48:11,322 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 16:48:12,037 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 16:48:12,630 [pool-1-thread-1] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2018-08-15 16:49:03,168 [Thread-6] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4eeb83fb: startup date [Wed Aug 15 16:48:02 CST 2018]; root of context hierarchy
+2018-08-15 16:49:03,218 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2018-08-15 16:49:03,224 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2018-08-15 16:49:03,410 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7220 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:49:03,411 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:49:03,418 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@42e8fbee: startup date [Wed Aug 15 16:49:03 CST 2018]; root of context hierarchy
+2018-08-15 16:49:03,852 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:49:03,861 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:49:03,862 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:49:03,864 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:49:03,867 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:49:03,868 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.511 seconds (JVM running for 62.495)
+2018-08-15 16:49:03,870 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 16:49:19,473 [Thread-9] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@42e8fbee: startup date [Wed Aug 15 16:49:03 CST 2018]; root of context hierarchy
+2018-08-15 16:49:19,696 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7220 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:49:19,696 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:49:19,700 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@59a6af99: startup date [Wed Aug 15 16:49:19 CST 2018]; root of context hierarchy
+2018-08-15 16:49:20,108 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:49:20,116 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:49:20,117 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:49:20,120 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:49:20,124 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:49:20,125 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.493 seconds (JVM running for 78.751)
+2018-08-15 16:49:20,127 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 16:49:21,539 [Thread-14] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@59a6af99: startup date [Wed Aug 15 16:49:19 CST 2018]; root of context hierarchy
+2018-08-15 16:49:21,661 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7220 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:49:21,661 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:49:21,664 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2cf17117: startup date [Wed Aug 15 16:49:21 CST 2018]; root of context hierarchy
+2018-08-15 16:49:21,990 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:49:21,997 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:49:21,997 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:49:22,001 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:49:22,004 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:49:22,005 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.37 seconds (JVM running for 80.632)
+2018-08-15 16:49:22,007 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 16:49:45,753 [Thread-19] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@2cf17117: startup date [Wed Aug 15 16:49:21 CST 2018]; root of context hierarchy
+2018-08-15 16:49:45,900 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7220 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:49:45,900 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:49:45,904 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@26bc9ba8: startup date [Wed Aug 15 16:49:45 CST 2018]; root of context hierarchy
+2018-08-15 16:49:46,227 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:49:46,232 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:49:46,233 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:49:46,234 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:49:46,237 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:49:46,238 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.366 seconds (JVM running for 104.863)
+2018-08-15 16:49:46,240 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 16:50:00,818 [Thread-24] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@26bc9ba8: startup date [Wed Aug 15 16:49:45 CST 2018]; root of context hierarchy
+2018-08-15 16:50:00,905 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7220 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:50:00,906 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:50:00,907 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@72b03be0: startup date [Wed Aug 15 16:50:00 CST 2018]; root of context hierarchy
+2018-08-15 16:50:01,251 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:50:01,259 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:50:01,259 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:50:01,261 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:50:01,264 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:50:01,265 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 0.387 seconds (JVM running for 119.89)
+2018-08-15 16:50:01,267 [restartedMain] INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2018-08-15 16:50:11,909 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 8144 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:50:11,911 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:50:11,960 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@110243c8: startup date [Wed Aug 15 16:50:11 CST 2018]; root of context hierarchy
+2018-08-15 16:50:13,580 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:50:13,601 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:50:13,602 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:50:13,607 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:50:13,618 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:50:13,631 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 2.096 seconds (JVM running for 2.402)
+2018-08-15 16:50:21,106 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 16:50:21,747 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-08-15 16:56:29,123 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7904 (E:\svn\SPGJava\GhSchedule\target\classes started by Administrator in E:\svn\SPGJava\GhSchedule)
+2018-08-15 16:56:29,130 [restartedMain] INFO  com.ghqkl.schedule.Application - No active profile set, falling back to default profiles: default
+2018-08-15 16:56:29,224 [restartedMain] INFO  org.springframework.context.annotation.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6bcc18b7: startup date [Wed Aug 15 16:56:29 CST 2018]; root of context hierarchy
+2018-08-15 16:56:32,254 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-08-15 16:56:32,282 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-08-15 16:56:32,283 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-08-15 16:56:32,288 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-08-15 16:56:32,302 [restartedMain] INFO  org.springframework.scheduling.annotation.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-08-15 16:56:32,327 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 4.111 seconds (JVM running for 6.965)
+2018-08-15 16:56:40,888 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-08-15 16:56:41,789 [pool-1-thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

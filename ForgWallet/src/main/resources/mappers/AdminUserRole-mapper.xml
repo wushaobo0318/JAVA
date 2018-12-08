@@ -1,0 +1,73 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.AdminUserRoleDao">
+
+<resultMap type="com.gh.xiangsu.entity.AdminUserRole" id="admin_user_roles">
+	<id property  = "roleId" column= "role_id"/>
+	<result property  = "userId" column= "user_id"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+role_id , user_id	
+</sql>	
+<!--添加admin_user_role-->
+ <insert id="addAdminUserRole" parameterType="com.gh.xiangsu.entity.AdminUserRole">                                                                                                                      
+ 		insert into admin_user_role(role_id,user_id) values(#{roleId},#{userId})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除admin_user_role-->
+ <delete id="delAdminUserRoleTrue"  parameterType="String">                                                                                                                                                                       
+     delete from admin_user_role where role_id = #{role_id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改admin_user_role-->
+ <update id="updateAdminUserRole" parameterType="com.gh.xiangsu.entity.AdminUserRole">                                                                                                                                           
+     update admin_user_role set user_id = #{userId} where role_id = #{roleId} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键admin_user_role-->
+ <select id="selectAdminUserRoleByID" parameterType="String" resultMap="admin_user_roles">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from admin_user_role where  role_id = #{roleId}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数admin_user_role-->
+ <select id="selectAdminUserRoleCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from admin_user_role                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数admin_user_role-->
+ <select id="selectAdminUserRoleCountAll" parameterType="String" resultMap="admin_user_roles">                                                                                                                                   
+     select count('1') from admin_user_role                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件admin_user_role-->
+<select id="selectAdminUserRolesByPOJO" parameterType="com.gh.xiangsu.entity.AdminUserRole"  resultMap="admin_user_roles">
+	select 
+ <include refid="Base_Column_List" /> 
+ from admin_user_role where 1=1 
+	<if test="roleId != null and roleId != '' "> 
+ and role_id = #{roleId} 
+</if>
+	<if test="userId != null and userId != '' "> 
+ and user_id = #{userId} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数admin_user_role-->
+<select id="selectAdminUserRolesByPOJOCount" parameterType="com.gh.xiangsu.entity.AdminUserRole"  resultType="Integer">
+	select count('1') from admin_user_role where 1=1 
+	<if test="roleId != null and roleId != '' "> 
+ and role_id = #{roleId} 
+</if>
+	<if test="userId != null and userId != '' "> 
+ and user_id = #{userId} 
+</if>
+</select>
+<!--查询根据条件分页查询admin_user_role-->
+<select id="selectAdminUserRolesByPojoPage" parameterType="java.util.Map"  resultMap="admin_user_roles">
+	select <include refid="Base_Column_List" /> from admin_user_role where 1=1 
+	<if test="pojo.roleId != null and pojo.roleId != ''"> 
+ and role_id = #{pojo.roleId} 
+</if>
+	<if test="pojo.userId != null and pojo.userId != ''"> 
+ and user_id = #{pojo.userId} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

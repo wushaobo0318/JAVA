@@ -1,0 +1,153 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.CoinDao">
+
+<resultMap type="com.gh.xiangsu.entity.Coin" id="xs_coins">
+	<id property  = "id" column= "id"/>
+	<result property  = "type" column= "type"/>
+	<result property  = "coinName" column= "coin_name"/>
+	<result property  = "rpcIp" column= "rpc_ip"/>
+	<result property  = "rpcPort" column= "rpc_port"/>
+	<result property  = "rpcUser" column= "rpc_user"/>
+	<result property  = "rpcPasswd" column= "rpc_passwd"/>
+	<result property  = "rpcWalletPasswd" column= "rpc_wallet_passwd"/>
+	<result property  = "coinImg" column= "coin_img"/>
+	<result property  = "isOut" column= "is_out"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , type , coin_name , rpc_ip , rpc_port , rpc_user , rpc_passwd , rpc_wallet_passwd , coin_img , is_out	
+</sql>	
+<!--添加xs_coin-->
+ <insert id="addCoin" parameterType="com.gh.xiangsu.entity.Coin">                                                                                                                      
+ 		insert into xs_coin(id,type,coin_name,rpc_ip,rpc_port,rpc_user,rpc_passwd,rpc_wallet_passwd,coin_img,is_out) values(#{id},#{type},#{coinName},#{rpcIp},#{rpcPort},#{rpcUser},#{rpcPasswd},#{rpcWalletPasswd},#{coinImg},#{isOut})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除xs_coin-->
+ <delete id="delCoinTrue"  parameterType="String">                                                                                                                                                                       
+     delete from xs_coin where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改xs_coin-->
+ <update id="updateCoin" parameterType="com.gh.xiangsu.entity.Coin">                                                                                                                                           
+     update xs_coin set type = #{type},coin_name = #{coinName},rpc_ip = #{rpcIp},rpc_port = #{rpcPort},rpc_user = #{rpcUser},rpc_passwd = #{rpcPasswd},rpc_wallet_passwd = #{rpcWalletPasswd},coin_img = #{coinImg},is_out = #{isOut} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键xs_coin-->
+ <select id="selectCoinByID" parameterType="String" resultMap="xs_coins">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from xs_coin where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数xs_coin-->
+ <select id="selectCoinCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from xs_coin                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数xs_coin-->
+ <select id="selectCoinCountAll" parameterType="String" resultMap="xs_coins">                                                                                                                                   
+     select count('1') from xs_coin                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件xs_coin-->
+<select id="selectCoinsByPOJO" parameterType="com.gh.xiangsu.entity.Coin"  resultMap="xs_coins">
+	select 
+ <include refid="Base_Column_List" /> 
+ from xs_coin where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="type != null and type != '' "> 
+ and type = #{type} 
+</if>
+	<if test="coinName != null and coinName != '' "> 
+ and coin_name = #{coinName} 
+</if>
+	<if test="rpcIp != null and rpcIp != '' "> 
+ and rpc_ip = #{rpcIp} 
+</if>
+	<if test="rpcPort != null and rpcPort != '' "> 
+ and rpc_port = #{rpcPort} 
+</if>
+	<if test="rpcUser != null and rpcUser != '' "> 
+ and rpc_user = #{rpcUser} 
+</if>
+	<if test="rpcPasswd != null and rpcPasswd != '' "> 
+ and rpc_passwd = #{rpcPasswd} 
+</if>
+	<if test="rpcWalletPasswd != null and rpcWalletPasswd != '' "> 
+ and rpc_wallet_passwd = #{rpcWalletPasswd} 
+</if>
+	<if test="coinImg != null and coinImg != '' "> 
+ and coin_img = #{coinImg} 
+</if>
+	<if test="isOut != null and isOut != '' "> 
+ and is_out = #{isOut} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数xs_coin-->
+<select id="selectCoinsByPOJOCount" parameterType="com.gh.xiangsu.entity.Coin"  resultType="Integer">
+	select count('1') from xs_coin where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="type != null and type != '' "> 
+ and type = #{type} 
+</if>
+	<if test="coinName != null and coinName != '' "> 
+ and coin_name = #{coinName} 
+</if>
+	<if test="rpcIp != null and rpcIp != '' "> 
+ and rpc_ip = #{rpcIp} 
+</if>
+	<if test="rpcPort != null and rpcPort != '' "> 
+ and rpc_port = #{rpcPort} 
+</if>
+	<if test="rpcUser != null and rpcUser != '' "> 
+ and rpc_user = #{rpcUser} 
+</if>
+	<if test="rpcPasswd != null and rpcPasswd != '' "> 
+ and rpc_passwd = #{rpcPasswd} 
+</if>
+	<if test="rpcWalletPasswd != null and rpcWalletPasswd != '' "> 
+ and rpc_wallet_passwd = #{rpcWalletPasswd} 
+</if>
+	<if test="coinImg != null and coinImg != '' "> 
+ and coin_img = #{coinImg} 
+</if>
+	<if test="isOut != null and isOut != '' "> 
+ and is_out = #{isOut} 
+</if>
+</select>
+<!--查询根据条件分页查询xs_coin-->
+<select id="selectCoinsByPojoPage" parameterType="java.util.Map"  resultMap="xs_coins">
+	select <include refid="Base_Column_List" /> from xs_coin where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.type != null and pojo.type != ''"> 
+ and type = #{pojo.type} 
+</if>
+	<if test="pojo.coinName != null and pojo.coinName != ''"> 
+ and coin_name = #{pojo.coinName} 
+</if>
+	<if test="pojo.rpcIp != null and pojo.rpcIp != ''"> 
+ and rpc_ip = #{pojo.rpcIp} 
+</if>
+	<if test="pojo.rpcPort != null and pojo.rpcPort != ''"> 
+ and rpc_port = #{pojo.rpcPort} 
+</if>
+	<if test="pojo.rpcUser != null and pojo.rpcUser != ''"> 
+ and rpc_user = #{pojo.rpcUser} 
+</if>
+	<if test="pojo.rpcPasswd != null and pojo.rpcPasswd != ''"> 
+ and rpc_passwd = #{pojo.rpcPasswd} 
+</if>
+	<if test="pojo.rpcWalletPasswd != null and pojo.rpcWalletPasswd != ''"> 
+ and rpc_wallet_passwd = #{pojo.rpcWalletPasswd} 
+</if>
+	<if test="pojo.coinImg != null and pojo.coinImg != ''"> 
+ and coin_img = #{pojo.coinImg} 
+</if>
+	<if test="pojo.isOut != null and pojo.isOut != ''"> 
+ and is_out = #{pojo.isOut} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

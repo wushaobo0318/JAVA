@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghqkl.schedule.dao.MiningServerDao">
+<resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.MiningServerBean" >
+    <id column="server_id" property="serverId" jdbcType="INTEGER" />
+    <result column="server_abbre" property="serverAbbre" jdbcType="VARCHAR" />
+    <result column="server_zh" property="serverZh" jdbcType="VARCHAR" />
+  </resultMap>
+   <sql id="find">
+         <if test="serverId!=null">and server_id = #{serverId}</if>
+         <if test="serverZh!=null">and server_zh = #{serverZh}</if>
+    </sql>
+    
+    <select id="getById" resultMap="BaseResultMap" parameterType="int">
+        select * from cjhj_mining_server where id=#{id} 
+    </select>
+    <delete id="removeById" parameterType="int">
+        delete from cjhj_mining_server where id = #{id}
+    </delete>
+    <delete id="deleteById" parameterType="int">
+        update cjhj_mining_server set status = 1  where id = #{id}
+    </delete>
+   
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from cjhj_mining_server
+    </select>
+    
+    <select id="queryList" resultMap="BaseResultMap" parameterType="com.ghqkl.schedule.model.MiningServerBean">
+         select * from cjhj_mining_server 
+        <where>
+         <include refid="find" />
+        </where> 
+    </select>
+    
+    <select id="count" resultType="int"  parameterType="com.ghqkl.schedule.model.MiningServerBean">
+        select count(1) from cjhj_mining_server 
+        <where>
+        <include refid="find" />
+        </where> 
+    </select>
+    <select id="queryMiningUserStatus"  resultType="int">
+        select status from cjhj_mining_user where user_id=#{userId}
+    </select>
+    <update id="resetMiningUserStatus">
+        update cjhj_mining_user set status=0
+    </update>
+    <update id="update" parameterType="com.ghqkl.schedule.model.MiningServerBean" >
+        update cjhj_mining_server
+        <set>
+	         <if test="key!=null">key = #{key},</if>
+	         <if test="value!=null">value = #{value},</if>
+        </set>
+        where id = #{id}
+    </update>
+ 
+</mapper>

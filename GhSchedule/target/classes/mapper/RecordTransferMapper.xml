@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ghqkl.schedule.dao.RecordTransferDao" >
+   <resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.RecordTransferBean" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_di" property="userDi" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="coin" property="coin" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="DOUBLE" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="surplus_spg" property="surplusSpg" jdbcType="DOUBLE" />   
+  </resultMap>
+
+	<insert id="insert" parameterType="com.ghqkl.schedule.model.RecordTransferBean">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+      	</selectKey>
+        insert into cjhj_record_transfer(user_di,user_id,coin,value,time,surplus_spg)
+         values(#{userDi},#{userId},#{coin},#{value},#{time},(select num from user_assets where coin='SPG' and user_id=#{userId}))
+    </insert>
+</mapper>

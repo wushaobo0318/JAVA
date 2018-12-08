@@ -1,0 +1,298 @@
+2018-10-23 09:30:44,871 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 5672 (C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule\target\classes started by Administrator in C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule)
+2018-10-23 09:30:44,877 [restartedMain] INFO  com.ghqkl.schedule.Application - The following profiles are active: dev
+2018-10-23 09:30:44,942 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4341c9d4: startup date [Tue Oct 23 09:30:44 CST 2018]; root of context hierarchy
+2018-10-23 09:30:46,284 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-10-23 09:30:46,831 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9deb2743] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-23 09:30:47,689 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2018-10-23 09:30:47,707 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2018-10-23 09:30:47,719 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-10-23 09:30:47,719 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-10-23 09:30:47,728 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_171\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\Git\cmd;D:\apache-maven-3.5.3\bin;D:\TortoiseGit\bin;D:\TortoiseSVN\bin;D:\nodejs\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\Desktop;;.]
+2018-10-23 09:30:47,849 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-23 09:30:47,850 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2908 ms
+2018-10-23 09:30:47,913 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-10-23 09:30:47,919 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-23 09:30:47,919 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-23 09:30:47,919 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-23 09:30:47,919 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-23 09:30:47,984 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'threadPoolTaskScheduler'
+2018-10-23 09:30:49,023 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 09:30:49,312 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4341c9d4: startup date [Tue Oct 23 09:30:44 CST 2018]; root of context hierarchy
+2018-10-23 09:30:49,404 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/init.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.init(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 09:30:49,405 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/stop.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.stop(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 09:30:49,410 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-23 09:30:49,411 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-23 09:30:49,449 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 09:30:49,450 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 09:30:49,987 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-10-23 09:30:50,026 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-23 09:30:50,029 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-23 09:30:50,035 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-23 09:30:50,052 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2018-10-23 09:30:50,063 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-10-23 09:30:50,083 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2018-10-23 09:30:50,087 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 5.879 seconds (JVM running for 6.379)
+2018-10-23 15:12:18,078 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 7052 (C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule\target\classes started by Administrator in C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule)
+2018-10-23 15:12:18,081 [restartedMain] INFO  com.ghqkl.schedule.Application - The following profiles are active: dev
+2018-10-23 15:12:18,148 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@14ab69e0: startup date [Tue Oct 23 15:12:18 CST 2018]; root of context hierarchy
+2018-10-23 15:12:19,121 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-10-23 15:12:19,667 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f3a718e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-23 15:12:20,445 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2018-10-23 15:12:20,460 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:12:20,472 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-10-23 15:12:20,472 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-10-23 15:12:20,483 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_171\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\Git\cmd;D:\apache-maven-3.5.3\bin;D:\TortoiseGit\bin;D:\TortoiseSVN\bin;D:\nodejs\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\Desktop;;.]
+2018-10-23 15:12:20,589 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-23 15:12:20,589 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2441 ms
+2018-10-23 15:12:20,671 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-10-23 15:12:20,675 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-23 15:12:20,675 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-23 15:12:20,675 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-23 15:12:20,676 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-23 15:12:20,735 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'threadPoolTaskScheduler'
+2018-10-23 15:12:21,773 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:12:22,051 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@14ab69e0: startup date [Tue Oct 23 15:12:18 CST 2018]; root of context hierarchy
+2018-10-23 15:12:22,135 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/init.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.init(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:12:22,136 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/stop.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.stop(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:12:22,140 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-23 15:12:22,141 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-23 15:12:22,179 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:12:22,179 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:12:22,646 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-10-23 15:12:22,679 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-23 15:12:22,680 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-23 15:12:22,685 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-23 15:12:22,697 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:12:22,705 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-10-23 15:12:22,723 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2018-10-23 15:12:22,726 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 5.178 seconds (JVM running for 5.552)
+2018-10-23 15:14:28,404 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-23 15:14:28,404 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-23 15:14:28,430 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2018-10-23 15:14:28,558 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-10-23 15:14:29,768 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-10-23 15:15:00,003 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:15:00,817 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:20:13,463 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 6324 (C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule\target\classes started by Administrator in C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule)
+2018-10-23 15:20:13,467 [restartedMain] INFO  com.ghqkl.schedule.Application - The following profiles are active: dev
+2018-10-23 15:20:13,600 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4be15bf9: startup date [Tue Oct 23 15:20:13 CST 2018]; root of context hierarchy
+2018-10-23 15:20:14,877 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-10-23 15:20:15,435 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$80af4ac8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-23 15:20:16,062 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2018-10-23 15:20:16,074 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:20:16,083 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-10-23 15:20:16,083 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-10-23 15:20:16,090 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_171\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\Git\cmd;D:\apache-maven-3.5.3\bin;D:\TortoiseGit\bin;D:\TortoiseSVN\bin;D:\nodejs\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\Desktop;;.]
+2018-10-23 15:20:16,178 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-23 15:20:16,179 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2580 ms
+2018-10-23 15:20:16,250 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-10-23 15:20:16,254 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-23 15:20:16,255 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-23 15:20:16,255 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-23 15:20:16,255 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-23 15:20:16,315 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'threadPoolTaskScheduler'
+2018-10-23 15:20:17,204 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:20:17,505 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4be15bf9: startup date [Tue Oct 23 15:20:13 CST 2018]; root of context hierarchy
+2018-10-23 15:20:17,594 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/init.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.init(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:20:17,595 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/stop.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.stop(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:20:17,599 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-23 15:20:17,600 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-23 15:20:17,629 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:20:17,629 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:20:18,070 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-10-23 15:20:18,104 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-23 15:20:18,106 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-23 15:20:18,112 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-23 15:20:18,125 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:20:18,134 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-10-23 15:20:18,152 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2018-10-23 15:20:18,156 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 5.454 seconds (JVM running for 5.85)
+2018-10-23 15:20:35,324 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-23 15:20:35,324 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-23 15:20:35,354 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 29 ms
+2018-10-23 15:20:35,458 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-10-23 15:20:36,580 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-10-23 15:21:00,003 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:21:00,792 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:26:30,477 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 3708 (C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule\target\classes started by Administrator in C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule)
+2018-10-23 15:26:30,479 [restartedMain] INFO  com.ghqkl.schedule.Application - The following profiles are active: dev
+2018-10-23 15:26:30,536 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5878a311: startup date [Tue Oct 23 15:26:30 CST 2018]; root of context hierarchy
+2018-10-23 15:26:31,609 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-10-23 15:26:32,156 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$789acc1e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-23 15:26:32,850 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2018-10-23 15:26:32,862 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:26:32,871 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-10-23 15:26:32,871 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-10-23 15:26:32,878 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_171\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\Git\cmd;D:\apache-maven-3.5.3\bin;D:\TortoiseGit\bin;D:\TortoiseSVN\bin;D:\nodejs\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\Desktop;;.]
+2018-10-23 15:26:32,964 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-23 15:26:32,964 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2428 ms
+2018-10-23 15:26:33,033 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-10-23 15:26:33,037 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-23 15:26:33,037 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-23 15:26:33,038 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-23 15:26:33,038 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-23 15:26:33,087 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'threadPoolTaskScheduler'
+2018-10-23 15:26:34,397 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:26:34,770 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5878a311: startup date [Tue Oct 23 15:26:30 CST 2018]; root of context hierarchy
+2018-10-23 15:26:34,890 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/init.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.init(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:26:34,891 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/stop.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.stop(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:26:34,902 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-23 15:26:34,904 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-23 15:26:34,959 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:26:34,959 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:26:35,612 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-10-23 15:26:35,659 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-23 15:26:35,661 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-23 15:26:35,666 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-23 15:26:35,677 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:26:35,684 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-10-23 15:26:35,703 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2018-10-23 15:26:35,707 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 5.765 seconds (JVM running for 6.142)
+2018-10-23 15:27:05,339 [http-nio-8090-exec-3] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-23 15:27:05,340 [http-nio-8090-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-23 15:27:05,364 [http-nio-8090-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2018-10-23 15:27:05,493 [http-nio-8090-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-10-23 15:27:06,646 [http-nio-8090-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-10-23 15:28:00,004 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:28:00,819 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:29:00,005 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:29:00,811 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:30:25,520 [restartedMain] INFO  com.ghqkl.schedule.Application - Starting Application on PCOS-1806251514 with PID 5940 (C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule\target\classes started by Administrator in C:\Users\Administrator\Desktop\SPG_04Code\Java\SPGJava\GhSchedule)
+2018-10-23 15:30:25,522 [restartedMain] INFO  com.ghqkl.schedule.Application - The following profiles are active: dev
+2018-10-23 15:30:25,591 [restartedMain] INFO  o.s.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@14ab69e0: startup date [Tue Oct 23 15:30:25 CST 2018]; root of context hierarchy
+2018-10-23 15:30:26,631 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-10-23 15:30:27,155 [restartedMain] INFO  o.s.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$268d36ab] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-23 15:30:27,902 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8090 (http)
+2018-10-23 15:30:27,917 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:30:27,932 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-10-23 15:30:27,932 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-10-23 15:30:27,942 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_171\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_171/bin/server;C:/Program Files/Java/jre1.8.0_171/bin;C:/Program Files/Java/jre1.8.0_171/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_171\bin;D:\Git\cmd;D:\apache-maven-3.5.3\bin;D:\TortoiseGit\bin;D:\TortoiseSVN\bin;D:\nodejs\;C:\Program Files (x86)\MySQL\MySQL Utilities 1.6\;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\Desktop;;.]
+2018-10-23 15:30:28,037 [localhost-startStop-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-23 15:30:28,038 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2446 ms
+2018-10-23 15:30:28,112 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2018-10-23 15:30:28,117 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-23 15:30:28,118 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-23 15:30:28,118 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-23 15:30:28,118 [localhost-startStop-1] INFO  org.springframework.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-23 15:30:28,175 [restartedMain] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService  'threadPoolTaskScheduler'
+2018-10-23 15:30:29,389 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:30:29,830 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@14ab69e0: startup date [Tue Oct 23 15:30:25 CST 2018]; root of context hierarchy
+2018-10-23 15:30:29,952 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/init.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.init(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:30:29,953 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/stop.html]}" onto public java.lang.String com.ghqkl.schedule.controller.InitController.stop(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.servlet.ModelAndView) throws java.io.IOException
+2018-10-23 15:30:29,961 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-23 15:30:29,962 [restartedMain] INFO  o.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-23 15:30:30,012 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:30:30,013 [restartedMain] INFO  org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-23 15:30:30,604 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-10-23 15:30:30,645 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-23 15:30:30,647 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-23 15:30:30,654 [restartedMain] INFO  org.springframework.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-10-23 15:30:30,666 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+2018-10-23 15:30:30,674 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-10-23 15:30:30,762 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8090 (http) with context path ''
+2018-10-23 15:30:30,769 [restartedMain] INFO  com.ghqkl.schedule.Application - Started Application in 5.828 seconds (JVM running for 6.214)
+2018-10-23 15:31:21,532 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-23 15:31:21,533 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-23 15:31:21,563 [http-nio-8090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+2018-10-23 15:31:21,673 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2018-10-23 15:31:22,814 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2018-10-23 15:32:00,003 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:32:00,815 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:33:00,005 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:33:00,904 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:34:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:34:00,807 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:35:00,005 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:35:00,805 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:36:00,005 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:36:00,804 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:37:00,005 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:37:00,797 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:38:00,005 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:38:00,826 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:39:00,005 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:39:00,811 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:40:00,005 [task-3] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:40:00,800 [task-3] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:41:00,005 [task-3] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:41:00,803 [task-3] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:42:00,005 [task-3] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:42:00,804 [task-3] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:43:00,005 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:43:00,801 [task-1] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:44:00,005 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:44:00,798 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:45:00,005 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:45:00,800 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:46:00,005 [task-8] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:46:00,799 [task-8] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:47:00,005 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:47:30,025 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:48:00,003 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:48:20,714 [task-4] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:49:00,003 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:49:00,704 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:50:00,006 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:50:00,708 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:51:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:51:00,713 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:52:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:52:00,710 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:53:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:53:00,710 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:54:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:54:00,704 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:55:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:55:00,707 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:56:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:56:00,707 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:57:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:57:00,706 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:58:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:58:00,707 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 15:59:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 15:59:00,707 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:00:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:00:00,706 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:01:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:01:00,713 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:02:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:02:00,707 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:03:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:03:00,715 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:04:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:04:00,706 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:05:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:05:00,705 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:06:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:06:00,704 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:07:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:07:00,705 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:08:00,005 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:08:00,707 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:07:48,386 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:07:49,093 [task-11] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:09:00,001 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:09:00,703 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:10:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:10:00,708 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:11:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:11:00,712 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:12:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:12:00,708 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:13:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:13:00,706 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:14:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:14:00,708 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:15:00,005 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:15:00,712 [task-2] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:16:00,005 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:16:30,017 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:17:00,003 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:17:00,764 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:18:00,005 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:18:00,762 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:19:00,005 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:19:00,765 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End
+2018-10-23 16:20:00,005 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release Begin
+2018-10-23 16:20:00,768 [task-7] INFO  com.ghqkl.schedule.task.ReleaseTask - release End

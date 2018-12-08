@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ghqkl.schedule.dao.CoinPriceLogDao">
+	<resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.CoinPriceLogBean">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="coin" property="coin" jdbcType="VARCHAR" />
+		<result column="price" property="price" jdbcType="DOUBLE" />
+		<result column="change" property="change" jdbcType="DOUBLE" />
+		<result column="create_time" property="createTime" jdbcType="VARCHAR" />
+		<result column="from" property="from" jdbcType="VARCHAR" />
+		<result column="create_user" property="createUser" jdbcType="INTEGER" />
+	</resultMap>
+    <!-- 更新币的价格 -->
+    <insert id="insert" parameterType="com.ghqkl.schedule.model.CoinPriceLogBean">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+      	</selectKey>
+        insert into coin_price_log(coin,price,`change`,create_time,`from`,create_user)
+         values(#{coin},#{price},#{change},#{createTime},#{from},#{createUser})
+    </insert>
+</mapper>

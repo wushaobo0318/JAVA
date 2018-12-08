@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-j6c50q1jc5lb0m1vm.mysql.rds.aliyuncs.com:3306/cjhj
+    username: ghqkl
+    password: ghqkl2018!
+    poolMaximumActiveConnections : 20
+    poolMaximumIdleConnections : 5
+    poolPingQuery : select 1
+    poolPingEnabled : true
+    poolPingConnectionsNotUsedFor : 3600000
+    primary :
+             max-idle : 10
+             max-wait : 10000
+             min-idle : 5
+             initial-size : 5
+             validation-query : SELECT 1
+             test-on-borrow : false
+             test-while-idle : true
+             time-between-eviction-runs-millis : 18800
+  redis:
+    host: 172.31.67.79
+    password: ghqkl
+    port: 6379
+    timeout: 3000
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 1
+        max-active: 1000
+        max-wait: -1
+ 

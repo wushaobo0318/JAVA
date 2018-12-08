@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 的值是当前映射文件对应的类的完整路径 -->
+<mapper namespace="com.ghqkl.schedule.dao.UserAssetsDao">
+	<resultMap id="BaseResultMap"
+		type="com.ghqkl.schedule.model.UserAssetsBean">
+		<id column="id" property="id" />
+		<result column="user_id" property="userId" />
+		<result column="coin" property="coin" />
+		<result column="num" property="num" />
+		<result column="address" property="address" />
+		<result column="original" property="original" />
+		<result column="released" property="released" />
+		<result column="original_released" property="originalReleased" />
+		<result column="update_time" property="updateTime" />
+		<result column="status" property="status" />
+		<result column="total_released" property="totalReleased" />
+	</resultMap>
+
+	<!-- ,num = num-num*#{percentage},original=original-original*#{percentage}, -->
+	<update id="release" parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		update user_assets set
+		released=released+num*#{percentage}+original*#{percentage}
+		where
+		id=#{id}
+	</update>
+
+	<select id="getById" resultMap="BaseResultMap">
+		select * from user_assets where
+		user_id=#{userId}
+	</select>
+	<select id="selectByUserAssetsId" resultMap="BaseResultMap">
+		select <include refid="columns" /> from user_assets where
+		id=#{id}
+	</select>
+	<sql id="columns">
+		id,user_id,coin,num,address,original,released,original_released,update_time,status,total_released
+	</sql>
+	<sql id="find">
+		<if test="userId!=null">and user_id = #{userId}</if>
+		<if test="coin!=null">and coin = #{coin}</if>
+		<if test="address!=null">and address = #{address}</if>
+		<if test="status!=null">and status = #{status}</if>
+	</sql>
+	<delete id="removeById" parameterType="int">
+		delete from user_assets
+		where id = #{id}
+	</delete>
+	<delete id="deleteById" parameterType="int">
+		update user_assets set
+		status = 1 where id = #{id}
+	</delete>
+
+	<select id="queryAll" resultMap="BaseResultMap">
+		select * from user_assets
+	</select>
+	<select id="queryList" resultMap="BaseResultMap"
+		parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		select
+		<include refid="columns" />
+		from user_assets
+		<where>
+			<include refid="find" />
+		</where>
+		ORDER BY update_time asc
+	</select>
+	<select id="queryNeedReleaseList1" resultMap="BaseResultMap"
+		parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		select user_assets.id from user_assets,cjhj_users where
+		user_assets.user_id=cjhj_users.id and user_assets.coin='SPG' and
+		user_assets.released &lt; user_assets
+		<if test="level!=null">and cjhj_users.level = #{level}</if>
+		<if test="num!=null">and user_assets.num &lt; #{num}</if>
+	</select>
+	<select id="queryNeedReleaseList2" resultMap="BaseResultMap"
+		parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		select user_assets.id from user_assets,cjhj_users where
+		user_assets.user_id=cjhj_users.id and user_assets.coin='SPG'
+		<if test="num!=null">and user_assets.num &gt;= #{num}</if>
+	</select>
+	<select id="queryUsersList" resultType="com.ghqkl.schedule.model.UserAssetsBean"
+		parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		select
+		ua.id,ua.user_id userId,ua.coin,ua.num,ua.address,ua.original,
+		ua.released,ua.original_released originalReleased,ua.update_time updateTime,ua.status,
+		ua.total_released totalReleased,u.level
+
+		from user_assets ua join cjhj_users u on u.id=ua.user_id
+		<where>
+			<include refid="find" />
+		</where>
+	</select>
+	<select id="count" resultType="int"
+		parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		select count(1) from user_assets
+		<where>
+			<include refid="find" />
+		</where>
+	</select>
+	<insert id="insert" parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		<selectKey resultType="java.lang.Integer" order="AFTER"
+			keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into user_assets(user_id,coin,num,address,update_time)
+		values(#{userId},#{coin},#{num},#{address},#{updateTime})
+	</insert>
+	<update id="update" parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		update user_assets
+		<set>
+			<if test="num!=null">num = num+ #{num},</if>
+			<if test="updateTime!=null">update_time = #{updateTime},</if>
+		</set>
+		where address = #{address}
+	</update>
+	<update id="updateUserAsse" parameterType="com.ghqkl.schedule.model.UserAssetsBean">
+		update user_assets
+		set
+		user_id =#{userId},coin=#{coin},num=#{num},address=#{address},
+		original=#{original},released=#{released},original_released=#{originalReleased},
+		update_time=#{updateTime},status=#{status},total_released=#{totalReleased}
+		where id = #{id}
+	</update>
+
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ghqkl.schedule.dao.ConfigDao">
+<resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.ConfigBean" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="desc" property="desc" jdbcType="VARCHAR" />
+    <result column="key" property="key" jdbcType="VARCHAR" />
+    <result column="value" property="value" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+  </resultMap>
+   <sql id="find">
+         <if test="id!=null">and id = #{id}</if>
+         <if test="key!=null">and `key` = #{key}</if>
+         <if test="value!=null">and `value` = #{value}</if>
+         <if test="status!=null">and `status` = #{status}</if>
+    </sql>
+    <!-- 查询配置项的次数 -->
+	 <select id="getConfigByKey" resultType="com.ghqkl.schedule.model.ConfigBean">
+	 	select `key`,`value`,`desc`,`status` from cjhj_config where `key`=#{key}
+	 </select>
+    <select id="getById" resultMap="BaseResultMap" parameterType="int">
+        select * from cjhj_config where id=#{id} 
+    </select>
+    <delete id="removeById" parameterType="int">
+        delete from cjhj_config where id = #{id}
+    </delete>
+    <delete id="deleteById" parameterType="int">
+        update cjhj_config set status = 1  where id = #{id}
+    </delete>
+   
+    <select id="queryAll" resultMap="BaseResultMap">
+        select * from cjhj_config
+    </select>
+    
+    <select id="queryList" resultMap="BaseResultMap" parameterType="com.ghqkl.schedule.model.ConfigBean">
+         select * from cjhj_config 
+        <where>
+         <include refid="find" />
+        </where> 
+    </select>
+    
+    <select id="count" resultType="int"  parameterType="com.ghqkl.schedule.model.ConfigBean">
+        select count(1) from cjhj_config 
+        <where>
+        <include refid="find" />
+        </where> 
+    </select>
+    <update id="update" parameterType="com.ghqkl.schedule.model.ConfigBean" >
+        update cjhj_config
+        <set>
+	         <if test="key!=null">`key` = #{key},</if>
+	         <if test="value!=null">`value` = #{value},</if>
+        </set>
+        where id = #{id}
+    </update>
+ 
+</mapper>

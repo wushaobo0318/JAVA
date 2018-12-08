@@ -1,0 +1,103 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.RecordReleaseDao">
+
+<resultMap type="com.gh.xiangsu.entity.RecordRelease" id="cjhj_record_releases">
+	<id property  = "id" column= "id"/>
+	<result property  = "userId" column= "user_id"/>
+	<result property  = "spgReleased" column= "spg_released"/>
+	<result property  = "spgOriginalReleased" column= "spg_original_released"/>
+	<result property  = "timestarmp" column= "timestarmp"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , user_id , spg_released , spg_original_released , timestarmp	
+</sql>	
+<!--添加cjhj_record_release-->
+ <insert id="addRecordRelease" parameterType="com.gh.xiangsu.entity.RecordRelease">                                                                                                                      
+ 		insert into cjhj_record_release(id,user_id,spg_released,spg_original_released,timestarmp) values(#{id},#{userId},#{spgReleased},#{spgOriginalReleased},#{timestarmp})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除cjhj_record_release-->
+ <delete id="delRecordReleaseTrue"  parameterType="String">                                                                                                                                                                       
+     delete from cjhj_record_release where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改cjhj_record_release-->
+ <update id="updateRecordRelease" parameterType="com.gh.xiangsu.entity.RecordRelease">                                                                                                                                           
+     update cjhj_record_release set user_id = #{userId},spg_released = #{spgReleased},spg_original_released = #{spgOriginalReleased},timestarmp = #{timestarmp} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键cjhj_record_release-->
+ <select id="selectRecordReleaseByID" parameterType="String" resultMap="cjhj_record_releases">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from cjhj_record_release where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数cjhj_record_release-->
+ <select id="selectRecordReleaseCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from cjhj_record_release                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数cjhj_record_release-->
+ <select id="selectRecordReleaseCountAll" parameterType="String" resultMap="cjhj_record_releases">                                                                                                                                   
+     select count('1') from cjhj_record_release                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件cjhj_record_release-->
+<select id="selectRecordReleasesByPOJO" parameterType="com.gh.xiangsu.entity.RecordRelease"  resultMap="cjhj_record_releases">
+	select 
+ <include refid="Base_Column_List" /> 
+ from cjhj_record_release where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="userId != null and userId != '' "> 
+ and user_id = #{userId} 
+</if>
+	<if test="spgReleased != null and spgReleased != '' "> 
+ and spg_released = #{spgReleased} 
+</if>
+	<if test="spgOriginalReleased != null and spgOriginalReleased != '' "> 
+ and spg_original_released = #{spgOriginalReleased} 
+</if>
+	<if test="timestarmp != null and timestarmp != '' "> 
+ and timestarmp = #{timestarmp} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数cjhj_record_release-->
+<select id="selectRecordReleasesByPOJOCount" parameterType="com.gh.xiangsu.entity.RecordRelease"  resultType="Integer">
+	select count('1') from cjhj_record_release where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="userId != null and userId != '' "> 
+ and user_id = #{userId} 
+</if>
+	<if test="spgReleased != null and spgReleased != '' "> 
+ and spg_released = #{spgReleased} 
+</if>
+	<if test="spgOriginalReleased != null and spgOriginalReleased != '' "> 
+ and spg_original_released = #{spgOriginalReleased} 
+</if>
+	<if test="timestarmp != null and timestarmp != '' "> 
+ and timestarmp = #{timestarmp} 
+</if>
+</select>
+<!--查询根据条件分页查询cjhj_record_release-->
+<select id="selectRecordReleasesByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_record_releases">
+	select <include refid="Base_Column_List" /> from cjhj_record_release where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.userId != null and pojo.userId != ''"> 
+ and user_id = #{pojo.userId} 
+</if>
+	<if test="pojo.spgReleased != null and pojo.spgReleased != ''"> 
+ and spg_released = #{pojo.spgReleased} 
+</if>
+	<if test="pojo.spgOriginalReleased != null and pojo.spgOriginalReleased != ''"> 
+ and spg_original_released = #{pojo.spgOriginalReleased} 
+</if>
+	<if test="pojo.timestarmp != null and pojo.timestarmp != ''"> 
+ and timestarmp = #{pojo.timestarmp} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

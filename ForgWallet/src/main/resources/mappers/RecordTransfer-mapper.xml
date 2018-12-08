@@ -1,0 +1,157 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.RecordTransferDao">	<resultMap type="com.gh.xiangsu.entity.RecordTransfer"		id="cjhj_record_transfers">		<id property="id" column="id" />		<result property="userId" column="user_id" />		<result property="userDi" column="user_di" />		<result property="coin" column="coin" />		<result property="value" column="value" />		<result property="time" column="time" />		<result property="surplusSpg" column="surplus_spg" />		<result property="toUserBalace" column="to_user_balace" />	</resultMap>
+
+	<sql id="Base_Column_List"> id , user_id , user_di , coin , value , time , surplus_spg
+		, to_user_balace
+	</sql>	<sql id="search">
+
+		<if test="userId != null and userId != '' ">
+			and user_id = #{userId}
+		</if>
+
+
+		<if test="userDi != null and userDi != '' ">
+			and user_di = #{userDi}
+		</if>
+
+
+		<if test="coin != null and coin != '' ">
+			and coin = #{coin}
+		</if>
+
+		<if test="startTime != null  ">
+			and time > #{startTime}
+		</if>
+		<if test="endTime != null  ">
+			and #{endTime}>time
+		</if>
+	</sql>	<!--添加cjhj_record_transfer -->	<insert id="addRecordTransfer"		parameterType="com.gh.xiangsu.entity.RecordTransfer">		insert into		cjhj_record_transfer(id,user_id,user_di,coin,value,time,surplus_spg,to_user_balace)		values(#{id},#{userId},#{userDi},#{coin},#{value},#{time},#{surplusSpg},#{toUserBalace})	</insert>	<!--删除cjhj_record_transfer -->	<delete id="delRecordTransferTrue" parameterType="String">		delete from		cjhj_record_transfer where id = #{id}	</delete>	<!--修改cjhj_record_transfer -->	<update id="updateRecordTransfer"		parameterType="com.gh.xiangsu.entity.RecordTransfer">		update cjhj_record_transfer set user_id =		#{userId},user_di = #{userDi},coin		= #{coin},value = #{value},time =		#{time},surplus_spg =		#{surplusSpg},to_user_balace = #{toUserBalace}		where id = #{id}	</update>
+
+	<!-- 根据条件查询用户交易记录 -->
+	<select id="selectBySearch" parameterType="map"
+		resultMap="cjhj_record_transfers">
+		select
+		<include refid="Base_Column_List" />
+		from cjhj_record_transfer where 1=1 
+		<include refid="search"/>
+	</select>
+	<!--查询根据主键cjhj_record_transfer -->	<select id="selectRecordTransferByID" parameterType="String"		resultMap="cjhj_record_transfers">		select		<include refid="Base_Column_List" />		from cjhj_record_transfer where id = #{id}	</select>
+	<!--查询所有未删除数据的总行数cjhj_record_transfer -->	<select id="selectRecordTransferCount" resultType="Integer">		select		count('1') from cjhj_record_transfer	</select>	<!--查询所有数据的行数cjhj_record_transfer -->	<select id="selectRecordTransferCountAll" parameterType="String"		resultMap="cjhj_record_transfers">		select count('1') from cjhj_record_transfer	</select>	<!--查询根据条件cjhj_record_transfer -->	<select id="selectRecordTransfersByPOJO"		parameterType="com.gh.xiangsu.entity.RecordTransfer"		resultMap="cjhj_record_transfers">		select
+		<include refid="Base_Column_List" />
+		from cjhj_record_transfer where 1=1		<if test="id != null and id != '' ">			and id = #{id}
+		</if>		<if test="userId != null and userId != '' ">			and user_id = #{userId}
+		</if>		<if test="userDi != null and userDi != '' ">			and user_di = #{userDi}
+		</if>		<if test="coin != null and coin != '' ">			and coin = #{coin}
+		</if>		<if test="value != null and value != '' ">			and value = #{value}
+		</if>		<if test="time != null and time != '' ">			and time = #{time}
+		</if>		<if test="surplusSpg != null and surplusSpg != '' ">			and surplus_spg = #{surplusSpg}
+		</if>		<if test="toUserBalace != null and toUserBalace != '' ">			and to_user_balace = #{toUserBalace}
+		</if>	</select>
+	<!--查询根据条件查询的行数cjhj_record_transfer -->	<select id="selectRecordTransfersByPOJOCount"		parameterType="com.gh.xiangsu.entity.RecordTransfer"		resultType="Integer">		select count('1') from cjhj_record_transfer where 1=1		<if test="id != null and id != '' ">			and id = #{id}
+		</if>		<if test="userId != null and userId != '' ">			and user_id = #{userId}
+		</if>		<if test="userDi != null and userDi != '' ">			and user_di = #{userDi}
+		</if>		<if test="coin != null and coin != '' ">			and coin = #{coin}
+		</if>		<if test="value != null and value != '' ">			and value = #{value}
+		</if>		<if test="time != null and time != '' ">			and time = #{time}
+		</if>		<if test="surplusSpg != null and surplusSpg != '' ">			and surplus_spg = #{surplusSpg}
+		</if>		<if test="toUserBalace != null and toUserBalace != '' ">			and to_user_balace = #{toUserBalace}
+		</if>	</select>	<!--查询根据条件分页查询cjhj_record_transfer -->	<select id="selectRecordTransfersByPojoPage"		parameterType="java.util.Map" resultMap="cjhj_record_transfers">		select		<include refid="Base_Column_List" />		from cjhj_record_transfer where 1=1		<if test="pojo.id != null and pojo.id != ''">			and id = #{pojo.id}
+		</if>		<if test="pojo.userId != null and pojo.userId != ''">			and user_id = #{pojo.userId}
+		</if>		<if test="pojo.userDi != null and pojo.userDi != ''">			and user_di = #{pojo.userDi}
+		</if>		<if test="pojo.coin != null and pojo.coin != ''">			and coin = #{pojo.coin}
+		</if>		<if test="pojo.value != null and pojo.value != ''">			and value = #{pojo.value}
+		</if>		<if test="pojo.time != null and pojo.time != ''">			and time = #{pojo.time}
+		</if>		<if test="pojo.surplusSpg != null and pojo.surplusSpg != ''">			and surplus_spg = #{pojo.surplusSpg}
+		</if>		<if test="pojo.toUserBalace != null and pojo.toUserBalace != ''">			and to_user_balace = #{pojo.toUserBalace}
+		</if>
+
+		limit #{spu.startRow} , #{spu.pageSize}	</select>
+	<select id="getListBySeacherPage" parameterType="map" resultMap="cjhj_record_transfers">
+
+		select
+		<include refid="Base_Column_List" />
+		from cjhj_record_transfer 
+
+
+		<where>
+		<if test="pojo.userId != null and pojo.userId != '' and pojo.type==null">
+			
+			and (user_id = #{pojo.userId} or user_di=#{pojo.userId})
+		</if>
+		<!-- <if test="pojo.userId != null and pojo.userId != ''">
+			and user_id = #{pojo.userId} 
+		</if> -->
+		<if test="pojo.userId != null and pojo.userId != '' and pojo.type==1">
+			
+			and user_id = #{pojo.userId} 
+		</if>
+		<if test="pojo.userId != null and pojo.userId != '' and pojo.type==2">
+			
+			and user_di = #{pojo.userId} 
+		</if>
+
+
+		<if test="pojo.coin != null and pojo.coin != ''">
+			and coin = #{pojo.coin}
+		</if>
+
+
+
+
+		<if test="pojo.startTime != null and pojo.startTime != ''">
+			and time >#{pojo.startTime}
+		</if>
+		<if test="pojo.endTime != null and pojo.endTime != ''">
+			and #{pojo.endTime}>time 
+		</if>
+
+		</where>
+		order by id desc
+		limit #{spu.startRow} , #{spu.pageSize}
+	</select>
+	<!-- 按条件查询同条数 -->
+	<select id="getListBySeacherPageCount" parameterType="map" resultType="int">
+
+		select
+		count(1)
+		from cjhj_record_transfer 
+
+		<where>
+		<if test="pojo.userId != null and pojo.userId != '' and pojo.type==null">
+			
+			and (user_id = #{pojo.userId} or user_di=#{pojo.userId})
+		</if>
+	<!-- 	<if test="pojo.userId != null and pojo.userId != ''">
+			and user_id = #{pojo.userId} 
+		</if> -->
+		<if test="pojo.userId != null and pojo.userId != '' and pojo.type==1">
+			
+			and user_id = #{pojo.userId} 
+		</if>
+		<if test="pojo.userId != null and pojo.userId != '' and pojo.type==2">
+			
+			and user_di = #{pojo.userId} 
+		</if>
+
+
+		<if test="pojo.coin != null and pojo.coin != ''">
+			and coin = #{pojo.coin}
+		</if>
+
+
+		<if test="pojo.startTime != null and pojo.startTime != ''">
+			and time >#{pojo.startTime}
+		</if>
+		<if test="pojo.endTime != null and pojo.endTime != ''">
+			and #{pojo.endTime}>time  
+		</if>
+
+		</where>
+		order by id desc
+	</select>
+	<select id="selectRecentRecords" parameterType="int" resultType="int">
+		select user_di from cjhj_record_transfer where user_id=#{userId} GROUP BY user_di
+	</select>
+</mapper>
+

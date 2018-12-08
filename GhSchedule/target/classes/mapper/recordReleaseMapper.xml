@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 的值是当前映射文件对应的类的完整路径 -->
+<mapper namespace="com.ghqkl.schedule.dao.RecordReleaseDao">
+	<resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.RecordReleaseBean">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+	    <result column="spg_released" property="spgReleased" />
+	    <result column="spg_original_released" property="spgOriginalReleased" />
+	    <result column="timestarmp" property="timestarmp" />
+    </resultMap>
+   
+    <insert id="insert" parameterType="com.ghqkl.schedule.model.RecordReleaseBean">
+    	insert into cjhj_record_release(id,user_id,spg_released,spg_original_released,timestarmp,coin) values(null,#{userId},#{spgReleased},#{spgOriginalReleased},#{timestarmp},#{coin})
+    </insert>
+    
+</mapper>

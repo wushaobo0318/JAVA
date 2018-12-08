@@ -1,0 +1,123 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.CoinPriceLogDao">
+
+<resultMap type="com.gh.xiangsu.entity.CoinPriceLog" id="coin_price_logs">
+	<id property  = "id" column= "id"/>
+	<result property  = "coin" column= "coin"/>
+	<result property  = "price" column= "price"/>
+	<result property  = "change" column= "change"/>
+	<result property  = "createTime" column= "create_time"/>
+	<result property  = "from" column= "from"/>
+	<result property  = "createUser" column= "create_user"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , coin , price , change , create_time , from , create_user	
+</sql>	
+<!--添加coin_price_log-->
+ <insert id="addCoinPriceLog" parameterType="com.gh.xiangsu.entity.CoinPriceLog">                                                                                                                      
+ 		insert into coin_price_log(id,coin,price,change,create_time,from,create_user) values(#{id},#{coin},#{price},#{change},#{createTime},#{from},#{createUser})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除coin_price_log-->
+ <delete id="delCoinPriceLogTrue"  parameterType="String">                                                                                                                                                                       
+     delete from coin_price_log where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改coin_price_log-->
+ <update id="updateCoinPriceLog" parameterType="com.gh.xiangsu.entity.CoinPriceLog">                                                                                                                                           
+     update coin_price_log set coin = #{coin},price = #{price},change = #{change},create_time = #{createTime},from = #{from},create_user = #{createUser} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键coin_price_log-->
+ <select id="selectCoinPriceLogByID" parameterType="String" resultMap="coin_price_logs">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from coin_price_log where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数coin_price_log-->
+ <select id="selectCoinPriceLogCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from coin_price_log                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数coin_price_log-->
+ <select id="selectCoinPriceLogCountAll" parameterType="String" resultMap="coin_price_logs">                                                                                                                                   
+     select count('1') from coin_price_log                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件coin_price_log-->
+<select id="selectCoinPriceLogsByPOJO" parameterType="com.gh.xiangsu.entity.CoinPriceLog"  resultMap="coin_price_logs">
+	select 
+ <include refid="Base_Column_List" /> 
+ from coin_price_log where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="coin != null and coin != '' "> 
+ and coin = #{coin} 
+</if>
+	<if test="price != null and price != '' "> 
+ and price = #{price} 
+</if>
+	<if test="change != null and change != '' "> 
+ and change = #{change} 
+</if>
+	<if test="createTime != null and createTime != '' "> 
+ and create_time = #{createTime} 
+</if>
+	<if test="from != null and from != '' "> 
+ and from = #{from} 
+</if>
+	<if test="createUser != null and createUser != '' "> 
+ and create_user = #{createUser} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数coin_price_log-->
+<select id="selectCoinPriceLogsByPOJOCount" parameterType="com.gh.xiangsu.entity.CoinPriceLog"  resultType="Integer">
+	select count('1') from coin_price_log where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="coin != null and coin != '' "> 
+ and coin = #{coin} 
+</if>
+	<if test="price != null and price != '' "> 
+ and price = #{price} 
+</if>
+	<if test="change != null and change != '' "> 
+ and change = #{change} 
+</if>
+	<if test="createTime != null and createTime != '' "> 
+ and create_time = #{createTime} 
+</if>
+	<if test="from != null and from != '' "> 
+ and from = #{from} 
+</if>
+	<if test="createUser != null and createUser != '' "> 
+ and create_user = #{createUser} 
+</if>
+</select>
+<!--查询根据条件分页查询coin_price_log-->
+<select id="selectCoinPriceLogsByPojoPage" parameterType="java.util.Map"  resultMap="coin_price_logs">
+	select <include refid="Base_Column_List" /> from coin_price_log where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.coin != null and pojo.coin != ''"> 
+ and coin = #{pojo.coin} 
+</if>
+	<if test="pojo.price != null and pojo.price != ''"> 
+ and price = #{pojo.price} 
+</if>
+	<if test="pojo.change != null and pojo.change != ''"> 
+ and change = #{pojo.change} 
+</if>
+	<if test="pojo.createTime != null and pojo.createTime != ''"> 
+ and create_time = #{pojo.createTime} 
+</if>
+	<if test="pojo.from != null and pojo.from != ''"> 
+ and from = #{pojo.from} 
+</if>
+	<if test="pojo.createUser != null and pojo.createUser != ''"> 
+ and create_user = #{pojo.createUser} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

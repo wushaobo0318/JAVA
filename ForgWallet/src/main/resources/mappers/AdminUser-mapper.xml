@@ -1,0 +1,173 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.AdminUserDao">
+
+<resultMap type="com.gh.xiangsu.entity.AdminUser" id="admin_users">
+	<id property  = "id" column= "id"/>
+	<result property  = "account" column= "account"/>
+	<result property  = "nickname" column= "nickname"/>
+	<result property  = "password" column= "password"/>
+	<result property  = "lastLoginTime" column= "last_login_time"/>
+	<result property  = "lastLoginIp" column= "last_login_ip"/>
+	<result property  = "loginCount" column= "login_count"/>
+	<result property  = "email" column= "email"/>
+	<result property  = "remark" column= "remark"/>
+	<result property  = "createTime" column= "create_time"/>
+	<result property  = "updateTime" column= "update_time"/>
+	<result property  = "status" column= "status"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , account , nickname , password , last_login_time , last_login_ip , login_count , email , remark , create_time , update_time , status	
+</sql>	
+<!--添加admin_user-->
+ <insert id="addAdminUser" parameterType="com.gh.xiangsu.entity.AdminUser">                                                                                                                      
+ 		insert into admin_user(id,account,nickname,password,last_login_time,last_login_ip,login_count,email,remark,create_time,update_time,status) values(#{id},#{account},#{nickname},#{password},#{lastLoginTime},#{lastLoginIp},#{loginCount},#{email},#{remark},#{createTime},#{updateTime},#{status})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除admin_user-->
+ <delete id="delAdminUserTrue"  parameterType="String">                                                                                                                                                                       
+     delete from admin_user where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改admin_user-->
+ <update id="updateAdminUser" parameterType="com.gh.xiangsu.entity.AdminUser">                                                                                                                                           
+     update admin_user set account = #{account},nickname = #{nickname},password = #{password},last_login_time = #{lastLoginTime},last_login_ip = #{lastLoginIp},login_count = #{loginCount},email = #{email},remark = #{remark},create_time = #{createTime},update_time = #{updateTime},status = #{status} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键admin_user-->
+ <select id="selectAdminUserByID" parameterType="String" resultMap="admin_users">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from admin_user where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数admin_user-->
+ <select id="selectAdminUserCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from admin_user                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数admin_user-->
+ <select id="selectAdminUserCountAll" parameterType="String" resultMap="admin_users">                                                                                                                                   
+     select count('1') from admin_user                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件admin_user-->
+<select id="selectAdminUsersByPOJO" parameterType="com.gh.xiangsu.entity.AdminUser"  resultMap="admin_users">
+	select 
+ <include refid="Base_Column_List" /> 
+ from admin_user where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="account != null and account != '' "> 
+ and account = #{account} 
+</if>
+	<if test="nickname != null and nickname != '' "> 
+ and nickname = #{nickname} 
+</if>
+	<if test="password != null and password != '' "> 
+ and password = #{password} 
+</if>
+	<if test="lastLoginTime != null and lastLoginTime != '' "> 
+ and last_login_time = #{lastLoginTime} 
+</if>
+	<if test="lastLoginIp != null and lastLoginIp != '' "> 
+ and last_login_ip = #{lastLoginIp} 
+</if>
+	<if test="loginCount != null and loginCount != '' "> 
+ and login_count = #{loginCount} 
+</if>
+	<if test="email != null and email != '' "> 
+ and email = #{email} 
+</if>
+	<if test="remark != null and remark != '' "> 
+ and remark = #{remark} 
+</if>
+	<if test="createTime != null and createTime != '' "> 
+ and create_time = #{createTime} 
+</if>
+	<if test="updateTime != null and updateTime != '' "> 
+ and update_time = #{updateTime} 
+</if>
+	<if test="status != null and status != '' "> 
+ and status = #{status} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数admin_user-->
+<select id="selectAdminUsersByPOJOCount" parameterType="com.gh.xiangsu.entity.AdminUser"  resultType="Integer">
+	select count('1') from admin_user where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="account != null and account != '' "> 
+ and account = #{account} 
+</if>
+	<if test="nickname != null and nickname != '' "> 
+ and nickname = #{nickname} 
+</if>
+	<if test="password != null and password != '' "> 
+ and password = #{password} 
+</if>
+	<if test="lastLoginTime != null and lastLoginTime != '' "> 
+ and last_login_time = #{lastLoginTime} 
+</if>
+	<if test="lastLoginIp != null and lastLoginIp != '' "> 
+ and last_login_ip = #{lastLoginIp} 
+</if>
+	<if test="loginCount != null and loginCount != '' "> 
+ and login_count = #{loginCount} 
+</if>
+	<if test="email != null and email != '' "> 
+ and email = #{email} 
+</if>
+	<if test="remark != null and remark != '' "> 
+ and remark = #{remark} 
+</if>
+	<if test="createTime != null and createTime != '' "> 
+ and create_time = #{createTime} 
+</if>
+	<if test="updateTime != null and updateTime != '' "> 
+ and update_time = #{updateTime} 
+</if>
+	<if test="status != null and status != '' "> 
+ and status = #{status} 
+</if>
+</select>
+<!--查询根据条件分页查询admin_user-->
+<select id="selectAdminUsersByPojoPage" parameterType="java.util.Map"  resultMap="admin_users">
+	select <include refid="Base_Column_List" /> from admin_user where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.account != null and pojo.account != ''"> 
+ and account = #{pojo.account} 
+</if>
+	<if test="pojo.nickname != null and pojo.nickname != ''"> 
+ and nickname = #{pojo.nickname} 
+</if>
+	<if test="pojo.password != null and pojo.password != ''"> 
+ and password = #{pojo.password} 
+</if>
+	<if test="pojo.lastLoginTime != null and pojo.lastLoginTime != ''"> 
+ and last_login_time = #{pojo.lastLoginTime} 
+</if>
+	<if test="pojo.lastLoginIp != null and pojo.lastLoginIp != ''"> 
+ and last_login_ip = #{pojo.lastLoginIp} 
+</if>
+	<if test="pojo.loginCount != null and pojo.loginCount != ''"> 
+ and login_count = #{pojo.loginCount} 
+</if>
+	<if test="pojo.email != null and pojo.email != ''"> 
+ and email = #{pojo.email} 
+</if>
+	<if test="pojo.remark != null and pojo.remark != ''"> 
+ and remark = #{pojo.remark} 
+</if>
+	<if test="pojo.createTime != null and pojo.createTime != ''"> 
+ and create_time = #{pojo.createTime} 
+</if>
+	<if test="pojo.updateTime != null and pojo.updateTime != ''"> 
+ and update_time = #{pojo.updateTime} 
+</if>
+	<if test="pojo.status != null and pojo.status != ''"> 
+ and status = #{pojo.status} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

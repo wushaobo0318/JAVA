@@ -1,0 +1,133 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.AdminNodeDao">
+
+<resultMap type="com.gh.xiangsu.entity.AdminNode" id="admin_nodes">
+	<id property  = "id" column= "id"/>
+	<result property  = "url" column= "url"/>
+	<result property  = "name" column= "name"/>
+	<result property  = "status" column= "status"/>
+	<result property  = "remark" column= "remark"/>
+	<result property  = "sort" column= "sort"/>
+	<result property  = "pid" column= "pid"/>
+	<result property  = "level" column= "level"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , url , name , status , remark , sort , pid , level	
+</sql>	
+<!--添加admin_node-->
+ <insert id="addAdminNode" parameterType="com.gh.xiangsu.entity.AdminNode">                                                                                                                      
+ 		insert into admin_node(id,url,name,status,remark,sort,pid,level) values(#{id},#{url},#{name},#{status},#{remark},#{sort},#{pid},#{level})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除admin_node-->
+ <delete id="delAdminNodeTrue"  parameterType="String">                                                                                                                                                                       
+     delete from admin_node where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改admin_node-->
+ <update id="updateAdminNode" parameterType="com.gh.xiangsu.entity.AdminNode">                                                                                                                                           
+     update admin_node set url = #{url},name = #{name},status = #{status},remark = #{remark},sort = #{sort},pid = #{pid},level = #{level} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键admin_node-->
+ <select id="selectAdminNodeByID" parameterType="String" resultMap="admin_nodes">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from admin_node where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数admin_node-->
+ <select id="selectAdminNodeCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from admin_node                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数admin_node-->
+ <select id="selectAdminNodeCountAll" parameterType="String" resultMap="admin_nodes">                                                                                                                                   
+     select count('1') from admin_node                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件admin_node-->
+<select id="selectAdminNodesByPOJO" parameterType="com.gh.xiangsu.entity.AdminNode"  resultMap="admin_nodes">
+	select 
+ <include refid="Base_Column_List" /> 
+ from admin_node where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="url != null and url != '' "> 
+ and url = #{url} 
+</if>
+	<if test="name != null and name != '' "> 
+ and name = #{name} 
+</if>
+	<if test="status != null and status != '' "> 
+ and status = #{status} 
+</if>
+	<if test="remark != null and remark != '' "> 
+ and remark = #{remark} 
+</if>
+	<if test="sort != null and sort != '' "> 
+ and sort = #{sort} 
+</if>
+	<if test="pid != null and pid != '' "> 
+ and pid = #{pid} 
+</if>
+	<if test="level != null and level != '' "> 
+ and level = #{level} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数admin_node-->
+<select id="selectAdminNodesByPOJOCount" parameterType="com.gh.xiangsu.entity.AdminNode"  resultType="Integer">
+	select count('1') from admin_node where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="url != null and url != '' "> 
+ and url = #{url} 
+</if>
+	<if test="name != null and name != '' "> 
+ and name = #{name} 
+</if>
+	<if test="status != null and status != '' "> 
+ and status = #{status} 
+</if>
+	<if test="remark != null and remark != '' "> 
+ and remark = #{remark} 
+</if>
+	<if test="sort != null and sort != '' "> 
+ and sort = #{sort} 
+</if>
+	<if test="pid != null and pid != '' "> 
+ and pid = #{pid} 
+</if>
+	<if test="level != null and level != '' "> 
+ and level = #{level} 
+</if>
+</select>
+<!--查询根据条件分页查询admin_node-->
+<select id="selectAdminNodesByPojoPage" parameterType="java.util.Map"  resultMap="admin_nodes">
+	select <include refid="Base_Column_List" /> from admin_node where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.url != null and pojo.url != ''"> 
+ and url = #{pojo.url} 
+</if>
+	<if test="pojo.name != null and pojo.name != ''"> 
+ and name = #{pojo.name} 
+</if>
+	<if test="pojo.status != null and pojo.status != ''"> 
+ and status = #{pojo.status} 
+</if>
+	<if test="pojo.remark != null and pojo.remark != ''"> 
+ and remark = #{pojo.remark} 
+</if>
+	<if test="pojo.sort != null and pojo.sort != ''"> 
+ and sort = #{pojo.sort} 
+</if>
+	<if test="pojo.pid != null and pojo.pid != ''"> 
+ and pid = #{pojo.pid} 
+</if>
+	<if test="pojo.level != null and pojo.level != ''"> 
+ and level = #{pojo.level} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

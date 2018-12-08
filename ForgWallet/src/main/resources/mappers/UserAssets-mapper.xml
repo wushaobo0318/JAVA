@@ -1,0 +1,163 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.UserAssetsDao">
+
+<resultMap type="com.gh.xiangsu.entity.UserAssets" id="user_assetss">
+	<id property  = "id" column= "id"/>
+	<result property  = "userId" column= "user_id"/>
+	<result property  = "coin" column= "coin"/>
+	<result property  = "num" column= "num"/>
+	<result property  = "address" column= "address"/>
+	<result property  = "original" column= "original"/>
+	<result property  = "released" column= "released"/>
+	<result property  = "originalReleased" column= "original_released"/>
+	<result property  = "updateTime" column= "update_time"/>
+	<result property  = "status" column= "status"/>
+	<result property  = "totalReleased" column= "total_released"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+id , user_id , coin , num , address , original , released , original_released , update_time , status , total_released	
+</sql>	
+<!--添加user_assets-->
+ <insert id="addUserAssets" parameterType="com.gh.xiangsu.entity.UserAssets">                                                                                                                      
+ 		insert into user_assets(id,user_id,coin,num,address,original,released,original_released,update_time,status,total_released) values(#{id},#{userId},#{coin},#{num},#{address},#{original},#{released},#{originalReleased},#{updateTime},#{status},#{totalReleased})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除user_assets-->
+ <delete id="delUserAssetsTrue"  parameterType="String">                                                                                                                                                                       
+     delete from user_assets where id = #{id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改user_assets-->
+ <update id="updateUserAssets" parameterType="com.gh.xiangsu.entity.UserAssets">                                                                                                                                           
+     update user_assets set user_id = #{userId},coin = #{coin},num = #{num},address = #{address},original = #{original},released = #{released},original_released = #{originalReleased},update_time = #{updateTime},status = #{status},total_released = #{totalReleased} where id = #{id} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键user_assets-->
+ <select id="selectUserAssetsByID" parameterType="String" resultMap="user_assetss">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from user_assets where  id = #{id}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数user_assets-->
+ <select id="selectUserAssetsCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from user_assets                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数user_assets-->
+ <select id="selectUserAssetsCountAll" parameterType="String" resultMap="user_assetss">                                                                                                                                   
+     select count('1') from user_assets                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件user_assets-->
+<select id="selectUserAssetssByPOJO" parameterType="com.gh.xiangsu.entity.UserAssets"  resultMap="user_assetss">
+	select 
+ <include refid="Base_Column_List" /> 
+ from user_assets where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="userId != null and userId != '' "> 
+ and user_id = #{userId} 
+</if>
+	<if test="coin != null and coin != '' "> 
+ and coin = #{coin} 
+</if>
+	<if test="num != null and num != '' "> 
+ and num = #{num} 
+</if>
+	<if test="address != null and address != '' "> 
+ and address = #{address} 
+</if>
+	<if test="original != null and original != '' "> 
+ and original = #{original} 
+</if>
+	<if test="released != null and released != '' "> 
+ and released = #{released} 
+</if>
+	<if test="originalReleased != null and originalReleased != '' "> 
+ and original_released = #{originalReleased} 
+</if>
+	<if test="updateTime != null and updateTime != '' "> 
+ and update_time = #{updateTime} 
+</if>
+	<if test="status != null and status != '' "> 
+ and status = #{status} 
+</if>
+	<if test="totalReleased != null and totalReleased != '' "> 
+ and total_released = #{totalReleased} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数user_assets-->
+<select id="selectUserAssetssByPOJOCount" parameterType="com.gh.xiangsu.entity.UserAssets"  resultType="Integer">
+	select count('1') from user_assets where 1=1 
+	<if test="id != null and id != '' "> 
+ and id = #{id} 
+</if>
+	<if test="userId != null and userId != '' "> 
+ and user_id = #{userId} 
+</if>
+	<if test="coin != null and coin != '' "> 
+ and coin = #{coin} 
+</if>
+	<if test="num != null and num != '' "> 
+ and num = #{num} 
+</if>
+	<if test="address != null and address != '' "> 
+ and address = #{address} 
+</if>
+	<if test="original != null and original != '' "> 
+ and original = #{original} 
+</if>
+	<if test="released != null and released != '' "> 
+ and released = #{released} 
+</if>
+	<if test="originalReleased != null and originalReleased != '' "> 
+ and original_released = #{originalReleased} 
+</if>
+	<if test="updateTime != null and updateTime != '' "> 
+ and update_time = #{updateTime} 
+</if>
+	<if test="status != null and status != '' "> 
+ and status = #{status} 
+</if>
+	<if test="totalReleased != null and totalReleased != '' "> 
+ and total_released = #{totalReleased} 
+</if>
+</select>
+<!--查询根据条件分页查询user_assets-->
+<select id="selectUserAssetssByPojoPage" parameterType="java.util.Map"  resultMap="user_assetss">
+	select <include refid="Base_Column_List" /> from user_assets where 1=1 
+	<if test="pojo.id != null and pojo.id != ''"> 
+ and id = #{pojo.id} 
+</if>
+	<if test="pojo.userId != null and pojo.userId != ''"> 
+ and user_id = #{pojo.userId} 
+</if>
+	<if test="pojo.coin != null and pojo.coin != ''"> 
+ and coin = #{pojo.coin} 
+</if>
+	<if test="pojo.num != null and pojo.num != ''"> 
+ and num = #{pojo.num} 
+</if>
+	<if test="pojo.address != null and pojo.address != ''"> 
+ and address = #{pojo.address} 
+</if>
+	<if test="pojo.original != null and pojo.original != ''"> 
+ and original = #{pojo.original} 
+</if>
+	<if test="pojo.released != null and pojo.released != ''"> 
+ and released = #{pojo.released} 
+</if>
+	<if test="pojo.originalReleased != null and pojo.originalReleased != ''"> 
+ and original_released = #{pojo.originalReleased} 
+</if>
+	<if test="pojo.updateTime != null and pojo.updateTime != ''"> 
+ and update_time = #{pojo.updateTime} 
+</if>
+	<if test="pojo.status != null and pojo.status != ''"> 
+ and status = #{pojo.status} 
+</if>
+	<if test="pojo.totalReleased != null and pojo.totalReleased != ''"> 
+ and total_released = #{pojo.totalReleased} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+

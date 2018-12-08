@@ -1,0 +1,10 @@
+server:
+  port : 8090
+  
+spring:
+  profiles:
+    active: pro
+    
+mybatis:
+  type-aliases-package: com.ghqkl.schedule.dao
+  mapper-locations: classpath:mapper/*.xml

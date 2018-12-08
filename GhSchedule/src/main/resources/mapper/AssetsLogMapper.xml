@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ghqkl.schedule.dao.AssetsLogDao">
+	<resultMap id="BaseResultMap" type="com.ghqkl.schedule.model.AssetsLogBean">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="user_id" property="userId" jdbcType="INTEGER" />
+		<result column="coin" property="coin" jdbcType="VARCHAR" />
+		<result column="change" property="change" jdbcType="DOUBLE" />
+		<result column="time" property="time" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+	</resultMap>
+    <!-- 添加交易记录 -->
+    <insert id="insert" parameterType="com.ghqkl.schedule.model.AssetsLogBean">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+      	</selectKey>
+        insert into cjhj_assest_log(user_id,coin,`change`,`time`,`type`)
+         values(#{userId},#{coin},#{change},#{time},#{type})
+    </insert>
+</mapper>

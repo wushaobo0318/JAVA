@@ -1,0 +1,83 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gh.xiangsu.dao.MiningServerDao">
+
+<resultMap type="com.gh.xiangsu.entity.MiningServer" id="cjhj_mining_servers">
+	<id property  = "serverId" column= "server_id"/>
+	<result property  = "serverAbbre" column= "server_abbre"/>
+	<result property  = "serverZh" column= "server_zh"/>
+</resultMap>
+
+<sql id="Base_Column_List">	
+server_id , server_abbre , server_zh	
+</sql>	
+<!--添加cjhj_mining_server-->
+ <insert id="addMiningServer" parameterType="com.gh.xiangsu.entity.MiningServer">                                                                                                                      
+ 		insert into cjhj_mining_server(server_id,server_abbre,server_zh) values(#{serverId},#{serverAbbre},#{serverZh})     
+ </insert>                                                                                                                                                                                                                        
+<!--删除cjhj_mining_server-->
+ <delete id="delMiningServerTrue"  parameterType="String">                                                                                                                                                                       
+     delete from cjhj_mining_server where server_id = #{server_id}                                                                                                                                                                                          
+ </delete>                                                                                                                                                                                                                        
+<!--修改cjhj_mining_server-->
+ <update id="updateMiningServer" parameterType="com.gh.xiangsu.entity.MiningServer">                                                                                                                                           
+     update cjhj_mining_server set server_abbre = #{serverAbbre},server_zh = #{serverZh} where server_id = #{serverId} 
+ </update>                                                                                                                                                                                                                        
+<!--查询根据主键cjhj_mining_server-->
+ <select id="selectMiningServerByID" parameterType="String" resultMap="cjhj_mining_servers">                                                                                                                                       
+     select  <include refid="Base_Column_List" /> from cjhj_mining_server where  server_id = #{serverId}                                                                                                                                                                                    
+ </select>                                                                                                                                                                                                                        
+<!--查询所有未删除数据的总行数cjhj_mining_server-->
+ <select id="selectMiningServerCount" resultType="Integer">                                                                                                                                                                      
+     select count('1') from cjhj_mining_server                                                                                                                                                                              
+ </select>                                                                                                                                                                                                                        
+<!--查询所有数据的行数cjhj_mining_server-->
+ <select id="selectMiningServerCountAll" parameterType="String" resultMap="cjhj_mining_servers">                                                                                                                                   
+     select count('1') from cjhj_mining_server                                                                                                                                                                                             
+ </select>                                                                                                                                                                                                                        
+<!--查询根据条件cjhj_mining_server-->
+<select id="selectMiningServersByPOJO" parameterType="com.gh.xiangsu.entity.MiningServer"  resultMap="cjhj_mining_servers">
+	select 
+ <include refid="Base_Column_List" /> 
+ from cjhj_mining_server where 1=1 
+	<if test="serverId != null and serverId != '' "> 
+ and server_id = #{serverId} 
+</if>
+	<if test="serverAbbre != null and serverAbbre != '' "> 
+ and server_abbre = #{serverAbbre} 
+</if>
+	<if test="serverZh != null and serverZh != '' "> 
+ and server_zh = #{serverZh} 
+</if>
+
+</select>
+<!--查询根据条件查询的行数cjhj_mining_server-->
+<select id="selectMiningServersByPOJOCount" parameterType="com.gh.xiangsu.entity.MiningServer"  resultType="Integer">
+	select count('1') from cjhj_mining_server where 1=1 
+	<if test="serverId != null and serverId != '' "> 
+ and server_id = #{serverId} 
+</if>
+	<if test="serverAbbre != null and serverAbbre != '' "> 
+ and server_abbre = #{serverAbbre} 
+</if>
+	<if test="serverZh != null and serverZh != '' "> 
+ and server_zh = #{serverZh} 
+</if>
+</select>
+<!--查询根据条件分页查询cjhj_mining_server-->
+<select id="selectMiningServersByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_mining_servers">
+	select <include refid="Base_Column_List" /> from cjhj_mining_server where 1=1 
+	<if test="pojo.serverId != null and pojo.serverId != ''"> 
+ and server_id = #{pojo.serverId} 
+</if>
+	<if test="pojo.serverAbbre != null and pojo.serverAbbre != ''"> 
+ and server_abbre = #{pojo.serverAbbre} 
+</if>
+	<if test="pojo.serverZh != null and pojo.serverZh != ''"> 
+ and server_zh = #{pojo.serverZh} 
+</if>
+
+ limit #{spu.startRow} , #{spu.pageSize}
+</select>
+</mapper>
+
