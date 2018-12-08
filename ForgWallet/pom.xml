@@ -51,6 +51,25 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			<version>2.2.3</version>
 			<classifier>jdk15</classifier><!-- 指定jdk版本 -->
 		</dependency>
+
+		<!--web3-->
+		<dependency>
+			<groupId>org.web3j</groupId>
+			<artifactId>web3j-spring-boot-starter</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+
+		<!--工具类-->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>4.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.29</version>
+		</dependency>
 	</dependencies>
 
 	<build>
