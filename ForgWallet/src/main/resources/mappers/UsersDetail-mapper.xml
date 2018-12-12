@@ -1,213 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.UsersDetailDao">
-
-<resultMap type="com.gh.xiangsu.entity.UsersDetail" id="cjhj_users_details">
-	<id property  = "id" column= "id"/>
-	<result property  = "userId" column= "user_id"/>
-	<result property  = "headImageUrl" column= "head_image_url"/>
-	<result property  = "sex" column= "sex"/>
-	<result property  = "email" column= "email"/>
-	<result property  = "token" column= "token"/>
-	<result property  = "tokenUpdateTime" column= "token_update_time"/>
-	<result property  = "cardType" column= "card_type"/>
-	<result property  = "idcard" column= "idcard"/>
-	<result property  = "idcardName" column= "idcard_name"/>
-	<result property  = "country" column= "country"/>
-	<result property  = "idcardUpdateTime" column= "idcard_update_time"/>
-	<result property  = "pic1" column= "pic1"/>
-	<result property  = "pic2" column= "pic2"/>
-	<result property  = "pic3" column= "pic3"/>
-	<result property  = "isPass" column= "is_pass"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , user_id , head_image_url , sex , email , token , token_update_time , card_type , idcard , idcard_name , country , idcard_update_time , pic1 , pic2 , pic3 , is_pass	
-</sql>	
-<!--添加cjhj_users_detail-->
- <insert id="addUsersDetail" parameterType="com.gh.xiangsu.entity.UsersDetail">                                                                                                                      
- 		insert into cjhj_users_detail(id,user_id,head_image_url,sex,email,token,token_update_time,card_type,idcard,idcard_name,country,idcard_update_time,pic1,pic2,pic3,is_pass) values(#{id},#{userId},#{headImageUrl},#{sex},#{email},#{token},#{tokenUpdateTime},#{cardType},#{idcard},#{idcardName},#{country},#{idcardUpdateTime},#{pic1},#{pic2},#{pic3},#{isPass})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_users_detail-->
- <delete id="delUsersDetailTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_users_detail where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_users_detail-->
- <update id="updateUsersDetail" parameterType="com.gh.xiangsu.entity.UsersDetail">                                                                                                                                           
-     update cjhj_users_detail set user_id = #{userId},head_image_url = #{headImageUrl},sex = #{sex},email = #{email},token = #{token},token_update_time = #{tokenUpdateTime},card_type = #{cardType},idcard = #{idcard},idcard_name = #{idcardName},country = #{country},idcard_update_time = #{idcardUpdateTime},pic1 = #{pic1},pic2 = #{pic2},pic3 = #{pic3},is_pass = #{isPass} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_users_detail-->
- <select id="selectUsersDetailByID" parameterType="String" resultMap="cjhj_users_details">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_users_detail where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_users_detail-->
- <select id="selectUsersDetailCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_users_detail                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_users_detail-->
- <select id="selectUsersDetailCountAll" parameterType="String" resultMap="cjhj_users_details">                                                                                                                                   
-     select count('1') from cjhj_users_detail                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_users_detail-->
-<select id="selectUsersDetailsByPOJO" parameterType="com.gh.xiangsu.entity.UsersDetail"  resultMap="cjhj_users_details">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_users_detail where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="headImageUrl != null and headImageUrl != '' "> 
- and head_image_url = #{headImageUrl} 
-</if>
-	<if test="sex != null and sex != '' "> 
- and sex = #{sex} 
-</if>
-	<if test="email != null and email != '' "> 
- and email = #{email} 
-</if>
-	<if test="token != null and token != '' "> 
- and token = #{token} 
-</if>
-	<if test="tokenUpdateTime != null and tokenUpdateTime != '' "> 
- and token_update_time = #{tokenUpdateTime} 
-</if>
-	<if test="cardType != null and cardType != '' "> 
- and card_type = #{cardType} 
-</if>
-	<if test="idcard != null and idcard != '' "> 
- and idcard = #{idcard} 
-</if>
-	<if test="idcardName != null and idcardName != '' "> 
- and idcard_name = #{idcardName} 
-</if>
-	<if test="country != null and country != '' "> 
- and country = #{country} 
-</if>
-	<if test="idcardUpdateTime != null and idcardUpdateTime != '' "> 
- and idcard_update_time = #{idcardUpdateTime} 
-</if>
-	<if test="pic1 != null and pic1 != '' "> 
- and pic1 = #{pic1} 
-</if>
-	<if test="pic2 != null and pic2 != '' "> 
- and pic2 = #{pic2} 
-</if>
-	<if test="pic3 != null and pic3 != '' "> 
- and pic3 = #{pic3} 
-</if>
-	<if test="isPass != null and isPass != '' "> 
- and is_pass = #{isPass} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_users_detail-->
-<select id="selectUsersDetailsByPOJOCount" parameterType="com.gh.xiangsu.entity.UsersDetail"  resultType="Integer">
-	select count('1') from cjhj_users_detail where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="headImageUrl != null and headImageUrl != '' "> 
- and head_image_url = #{headImageUrl} 
-</if>
-	<if test="sex != null and sex != '' "> 
- and sex = #{sex} 
-</if>
-	<if test="email != null and email != '' "> 
- and email = #{email} 
-</if>
-	<if test="token != null and token != '' "> 
- and token = #{token} 
-</if>
-	<if test="tokenUpdateTime != null and tokenUpdateTime != '' "> 
- and token_update_time = #{tokenUpdateTime} 
-</if>
-	<if test="cardType != null and cardType != '' "> 
- and card_type = #{cardType} 
-</if>
-	<if test="idcard != null and idcard != '' "> 
- and idcard = #{idcard} 
-</if>
-	<if test="idcardName != null and idcardName != '' "> 
- and idcard_name = #{idcardName} 
-</if>
-	<if test="country != null and country != '' "> 
- and country = #{country} 
-</if>
-	<if test="idcardUpdateTime != null and idcardUpdateTime != '' "> 
- and idcard_update_time = #{idcardUpdateTime} 
-</if>
-	<if test="pic1 != null and pic1 != '' "> 
- and pic1 = #{pic1} 
-</if>
-	<if test="pic2 != null and pic2 != '' "> 
- and pic2 = #{pic2} 
-</if>
-	<if test="pic3 != null and pic3 != '' "> 
- and pic3 = #{pic3} 
-</if>
-	<if test="isPass != null and isPass != '' "> 
- and is_pass = #{isPass} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_users_detail-->
-<select id="selectUsersDetailsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_users_details">
-	select <include refid="Base_Column_List" /> from cjhj_users_detail where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-	<if test="pojo.headImageUrl != null and pojo.headImageUrl != ''"> 
- and head_image_url = #{pojo.headImageUrl} 
-</if>
-	<if test="pojo.sex != null and pojo.sex != ''"> 
- and sex = #{pojo.sex} 
-</if>
-	<if test="pojo.email != null and pojo.email != ''"> 
- and email = #{pojo.email} 
-</if>
-	<if test="pojo.token != null and pojo.token != ''"> 
- and token = #{pojo.token} 
-</if>
-	<if test="pojo.tokenUpdateTime != null and pojo.tokenUpdateTime != ''"> 
- and token_update_time = #{pojo.tokenUpdateTime} 
-</if>
-	<if test="pojo.cardType != null and pojo.cardType != ''"> 
- and card_type = #{pojo.cardType} 
-</if>
-	<if test="pojo.idcard != null and pojo.idcard != ''"> 
- and idcard = #{pojo.idcard} 
-</if>
-	<if test="pojo.idcardName != null and pojo.idcardName != ''"> 
- and idcard_name = #{pojo.idcardName} 
-</if>
-	<if test="pojo.country != null and pojo.country != ''"> 
- and country = #{pojo.country} 
-</if>
-	<if test="pojo.idcardUpdateTime != null and pojo.idcardUpdateTime != ''"> 
- and idcard_update_time = #{pojo.idcardUpdateTime} 
-</if>
-	<if test="pojo.pic1 != null and pojo.pic1 != ''"> 
- and pic1 = #{pojo.pic1} 
-</if>
-	<if test="pojo.pic2 != null and pojo.pic2 != ''"> 
- and pic2 = #{pojo.pic2} 
-</if>
-	<if test="pojo.pic3 != null and pojo.pic3 != ''"> 
- and pic3 = #{pojo.pic3} 
-</if>
-	<if test="pojo.isPass != null and pojo.isPass != ''"> 
- and is_pass = #{pojo.isPass} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

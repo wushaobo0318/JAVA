@@ -1,123 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.UserActionLogDao">
-
-<resultMap type="com.gh.xiangsu.entity.UserActionLog" id="cjhj_user_action_logs">
-	<id property  = "id" column= "id"/>
-	<result property  = "action" column= "action"/>
-	<result property  = "userId" column= "user_id"/>
-	<result property  = "createTime" column= "create_time"/>
-	<result property  = "version" column= "version"/>
-	<result property  = "toUserId" column= "to_user_id"/>
-	<result property  = "value" column= "value"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , action , user_id , create_time , version , to_user_id , value	
-</sql>	
-<!--添加cjhj_user_action_log-->
- <insert id="addUserActionLog" parameterType="com.gh.xiangsu.entity.UserActionLog">                                                                                                                      
- 		insert into cjhj_user_action_log(id,action,user_id,create_time,version,to_user_id,value) values(#{id},#{action},#{userId},#{createTime},#{version},#{toUserId},#{value})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_user_action_log-->
- <delete id="delUserActionLogTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_user_action_log where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_user_action_log-->
- <update id="updateUserActionLog" parameterType="com.gh.xiangsu.entity.UserActionLog">                                                                                                                                           
-     update cjhj_user_action_log set action = #{action},user_id = #{userId},create_time = #{createTime},version = #{version},to_user_id = #{toUserId},value = #{value} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_user_action_log-->
- <select id="selectUserActionLogByID" parameterType="String" resultMap="cjhj_user_action_logs">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_user_action_log where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_user_action_log-->
- <select id="selectUserActionLogCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_user_action_log                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_user_action_log-->
- <select id="selectUserActionLogCountAll" parameterType="String" resultMap="cjhj_user_action_logs">                                                                                                                                   
-     select count('1') from cjhj_user_action_log                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_user_action_log-->
-<select id="selectUserActionLogsByPOJO" parameterType="com.gh.xiangsu.entity.UserActionLog"  resultMap="cjhj_user_action_logs">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_user_action_log where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="action != null and action != '' "> 
- and action = #{action} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="version != null and version != '' "> 
- and version = #{version} 
-</if>
-	<if test="toUserId != null and toUserId != '' "> 
- and to_user_id = #{toUserId} 
-</if>
-	<if test="value != null and value != '' "> 
- and value = #{value} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_user_action_log-->
-<select id="selectUserActionLogsByPOJOCount" parameterType="com.gh.xiangsu.entity.UserActionLog"  resultType="Integer">
-	select count('1') from cjhj_user_action_log where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="action != null and action != '' "> 
- and action = #{action} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="version != null and version != '' "> 
- and version = #{version} 
-</if>
-	<if test="toUserId != null and toUserId != '' "> 
- and to_user_id = #{toUserId} 
-</if>
-	<if test="value != null and value != '' "> 
- and value = #{value} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_user_action_log-->
-<select id="selectUserActionLogsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_user_action_logs">
-	select <include refid="Base_Column_List" /> from cjhj_user_action_log where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.action != null and pojo.action != ''"> 
- and action = #{pojo.action} 
-</if>
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-	<if test="pojo.createTime != null and pojo.createTime != ''"> 
- and create_time = #{pojo.createTime} 
-</if>
-	<if test="pojo.version != null and pojo.version != ''"> 
- and version = #{pojo.version} 
-</if>
-	<if test="pojo.toUserId != null and pojo.toUserId != ''"> 
- and to_user_id = #{pojo.toUserId} 
-</if>
-	<if test="pojo.value != null and pojo.value != ''"> 
- and value = #{pojo.value} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

@@ -1,113 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.AssestLogDao">
-
-<resultMap type="com.gh.xiangsu.entity.AssestLog" id="cjhj_assest_logs">
-	<id property  = "id" column= "id"/>
-	<result property  = "userId" column= "user_id"/>
-	<result property  = "coin" column= "coin"/>
-	<result property  = "change" column= "change"/>
-	<result property  = "time" column= "time"/>
-	<result property  = "type" column= "type"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , user_id , coin , `change` , time , type	
-</sql>	
-<!--添加cjhj_assest_log-->
- <insert id="addAssestLog" parameterType="com.gh.xiangsu.entity.AssestLog">                                                                                                                      
- 		insert into cjhj_assest_log(id,user_id,coin,`change`,time,type) values(#{id},#{userId},#{coin},#{change},#{time},#{type})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_assest_log-->
- <delete id="delAssestLogTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_assest_log where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_assest_log-->
- <update id="updateAssestLog" parameterType="com.gh.xiangsu.entity.AssestLog">                                                                                                                                           
-     update cjhj_assest_log set user_id = #{userId},coin = #{coin},`change` = #{change},time = #{time},type = #{type} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_assest_log-->
- <select id="selectAssestLogByID" parameterType="String" resultMap="cjhj_assest_logs">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_assest_log where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_assest_log-->
- <select id="selectAssestLogCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_assest_log                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_assest_log-->
- <select id="selectAssestLogCountAll" parameterType="String" resultMap="cjhj_assest_logs">                                                                                                                                   
-     select count('1') from cjhj_assest_log                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_assest_log-->
-<select id="selectAssestLogsByPOJO" parameterType="com.gh.xiangsu.entity.AssestLog"  resultMap="cjhj_assest_logs">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_assest_log where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="coin != null and coin != '' "> 
- and coin = #{coin} 
-</if>
-	<if test="change != null and change != '' "> 
- and `change` = #{change} 
-</if>
-	<if test="time != null and time != '' "> 
- and time = #{time} 
-</if>
-	<if test="type != null and type != '' "> 
- and type = #{type} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_assest_log-->
-<select id="selectAssestLogsByPOJOCount" parameterType="com.gh.xiangsu.entity.AssestLog"  resultType="Integer">
-	select count('1') from cjhj_assest_log where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="coin != null and coin != '' "> 
- and coin = #{coin} 
-</if>
-	<if test="change != null and change != '' "> 
- and `change` = #{change} 
-</if>
-	<if test="time != null and time != '' "> 
- and time = #{time} 
-</if>
-	<if test="type != null and type != '' "> 
- and type = #{type} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_assest_log-->
-<select id="selectAssestLogsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_assest_logs">
-	select <include refid="Base_Column_List" /> from cjhj_assest_log where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-	<if test="pojo.coin != null and pojo.coin != ''"> 
- and coin = #{pojo.coin} 
-</if>
-	<if test="pojo.change != null and pojo.change != ''"> 
- and `change` = #{pojo.change} 
-</if>
-	<if test="pojo.time != null and pojo.time != ''"> 
- and time = #{pojo.time} 
-</if>
-	<if test="pojo.type != null and pojo.type != ''"> 
- and type = #{pojo.type} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

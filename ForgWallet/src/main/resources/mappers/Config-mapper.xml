@@ -1,103 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.ConfigDao">
-
-<resultMap type="com.gh.xiangsu.entity.Config" id="cjhj_configs">
-	<id property  = "id" column= "id"/>
-	<result property  = "key" column= "key"/>
-	<result property  = "value" column= "value"/>
-	<result property  = "desc" column= "desc"/>
-	<result property  = "status" column= "status"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , `key` , `value` , `desc` , status	
-</sql>	
-<!--添加cjhj_config-->
- <insert id="addConfig" parameterType="com.gh.xiangsu.entity.Config">                                                                                                                      
- 		insert into cjhj_config(id,`key`,`value`,`desc`,status) values(#{id},#{key},#{value},#{desc},#{status})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_config-->
- <delete id="delConfigTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_config where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_config-->
- <update id="updateConfig" parameterType="com.gh.xiangsu.entity.Config">                                                                                                                                           
-     update cjhj_config set `key` = #{key},`value` = #{value},`desc` = #{desc},status = #{status} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_config-->
- <select id="selectConfigByID" parameterType="String" resultMap="cjhj_configs">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_config where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_config-->
- <select id="selectConfigCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_config                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_config-->
- <select id="selectConfigCountAll" parameterType="String" resultMap="cjhj_configs">                                                                                                                                   
-     select count('1') from cjhj_config                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_config-->
-<select id="selectConfigsByPOJO" parameterType="com.gh.xiangsu.entity.Config"  resultMap="cjhj_configs">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_config where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="key != null and key != '' "> 
- and `key` = #{key} 
-</if>
-	<if test="value != null and value != '' "> 
- and `value` = #{value} 
-</if>
-	<if test="desc != null and desc != '' "> 
- and `desc` = #{desc} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_config-->
-<select id="selectConfigsByPOJOCount" parameterType="com.gh.xiangsu.entity.Config"  resultType="Integer">
-	select count('1') from cjhj_config where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="key != null and key != '' "> 
- and `key` = #{key} 
-</if>
-	<if test="value != null and value != '' "> 
- and `value` = #{value} 
-</if>
-	<if test="desc != null and desc != '' "> 
- and `desc` = #{desc} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_config-->
-<select id="selectConfigsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_configs">
-	select <include refid="Base_Column_List" /> from cjhj_config where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.key != null and pojo.key != ''"> 
- and `key` = #{pojo.key} 
-</if>
-	<if test="pojo.value != null and pojo.value != ''"> 
- and `value` = #{pojo.value} 
-</if>
-	<if test="pojo.desc != null and pojo.desc != ''"> 
- and `desc` = #{pojo.desc} 
-</if>
-	<if test="pojo.status != null and pojo.status != ''"> 
- and status = #{pojo.status} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

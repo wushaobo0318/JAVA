@@ -1,113 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.AdminRoleDao">
-
-<resultMap type="com.gh.xiangsu.entity.AdminRole" id="admin_roles">
-	<id property  = "id" column= "id"/>
-	<result property  = "name" column= "name"/>
-	<result property  = "status" column= "status"/>
-	<result property  = "remark" column= "remark"/>
-	<result property  = "createTime" column= "create_time"/>
-	<result property  = "updateTime" column= "update_time"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , name , status , remark , create_time , update_time	
-</sql>	
-<!--添加admin_role-->
- <insert id="addAdminRole" parameterType="com.gh.xiangsu.entity.AdminRole">                                                                                                                      
- 		insert into admin_role(id,name,status,remark,create_time,update_time) values(#{id},#{name},#{status},#{remark},#{createTime},#{updateTime})     
- </insert>                                                                                                                                                                                                                        
-<!--删除admin_role-->
- <delete id="delAdminRoleTrue"  parameterType="String">                                                                                                                                                                       
-     delete from admin_role where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改admin_role-->
- <update id="updateAdminRole" parameterType="com.gh.xiangsu.entity.AdminRole">                                                                                                                                           
-     update admin_role set name = #{name},status = #{status},remark = #{remark},create_time = #{createTime},update_time = #{updateTime} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键admin_role-->
- <select id="selectAdminRoleByID" parameterType="String" resultMap="admin_roles">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from admin_role where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数admin_role-->
- <select id="selectAdminRoleCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from admin_role                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数admin_role-->
- <select id="selectAdminRoleCountAll" parameterType="String" resultMap="admin_roles">                                                                                                                                   
-     select count('1') from admin_role                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件admin_role-->
-<select id="selectAdminRolesByPOJO" parameterType="com.gh.xiangsu.entity.AdminRole"  resultMap="admin_roles">
-	select 
- <include refid="Base_Column_List" /> 
- from admin_role where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="name != null and name != '' "> 
- and name = #{name} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="remark != null and remark != '' "> 
- and remark = #{remark} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="updateTime != null and updateTime != '' "> 
- and update_time = #{updateTime} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数admin_role-->
-<select id="selectAdminRolesByPOJOCount" parameterType="com.gh.xiangsu.entity.AdminRole"  resultType="Integer">
-	select count('1') from admin_role where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="name != null and name != '' "> 
- and name = #{name} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="remark != null and remark != '' "> 
- and remark = #{remark} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="updateTime != null and updateTime != '' "> 
- and update_time = #{updateTime} 
-</if>
-</select>
-<!--查询根据条件分页查询admin_role-->
-<select id="selectAdminRolesByPojoPage" parameterType="java.util.Map"  resultMap="admin_roles">
-	select <include refid="Base_Column_List" /> from admin_role where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.name != null and pojo.name != ''"> 
- and name = #{pojo.name} 
-</if>
-	<if test="pojo.status != null and pojo.status != ''"> 
- and status = #{pojo.status} 
-</if>
-	<if test="pojo.remark != null and pojo.remark != ''"> 
- and remark = #{pojo.remark} 
-</if>
-	<if test="pojo.createTime != null and pojo.createTime != ''"> 
- and create_time = #{pojo.createTime} 
-</if>
-	<if test="pojo.updateTime != null and pojo.updateTime != ''"> 
- and update_time = #{pojo.updateTime} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

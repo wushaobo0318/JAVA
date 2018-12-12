@@ -1,63 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.UsersDao">	<resultMap type="com.gh.xiangsu.entity.Users"		id="cjhj_userss">		<id property="id" column="id" />		<result property="phone" column="phone" />		<result property="password1" column="password1" />		<result property="password2" column="password2" />		<result property="level" column="level" />		<result property="pid" column="pid" />		<result property="isIdcard" column="is_idcard" />		<result property="regTime" column="reg_time" />		<result property="regIp" column="reg_ip" />		<result property="status" column="status" />		<result property="nickname" column="nickname" />		<result property="areacode" column="areacode" />		<result property="idcardName" column="idcard_name" />		<result property="idcard" column="idcard" />	</resultMap>
-
-	<sql id="Base_Column_List"> id , phone , password1 , password2 , level , pid ,
-		is_idcard , reg_time , reg_ip , status , nickname , areacode ,
-		idcard_name , idcard
-	</sql>	<!--添加cjhj_users -->	<insert id="addUsers"		parameterType="com.gh.xiangsu.entity.Users">		insert into		cjhj_users(id,phone,password1,password2,level,pid,is_idcard,reg_time,reg_ip,status,nickname,areacode,idcard_name,idcard)		values(#{id},#{phone},#{password1},#{password2},#{level},#{pid},#{isIdcard},#{regTime},#{regIp},#{status},#{nickname},#{areacode},#{idcardName},#{idcard})		<selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
-          SELECT LAST_INSERT_ID()
-      	</selectKey>	</insert>	<!--删除cjhj_users -->	<delete id="delUsersTrue" parameterType="String">		delete from cjhj_users where id = #{id}	</delete>	<!--修改cjhj_users -->	<update id="updateUsers"		parameterType="com.gh.xiangsu.entity.Users">		update cjhj_users set phone = #{phone},password1 = #{password1},password2 =		#{password2},level = #{level},pid = #{pid},is_idcard =		#{isIdcard},reg_time = #{regTime},reg_ip = #{regIp},status =		#{status},nickname = #{nickname},areacode = #{areacode},idcard_name =		#{idcardName},idcard = #{idcard} where id = #{id}	</update>
-	<!--查询根据主键cjhj_users -->	<select id="selectUsersByID" parameterType="String"		resultMap="cjhj_userss">		select		 u.id , u.phone , u.password1 , u.password2 , u.level , u.pid ,
-		u.is_idcard , u.reg_time ,u. reg_ip , u.status , u.nickname , u.areacode ,
-		ud.idcard_name , ud.idcard		from cjhj_users u left join cjhj_users_detail ud on ud.user_id=u.id where u.id = #{id}	</select>
-	<!--查询所有未删除数据的总行数cjhj_users -->	<select id="selectUsersCount" resultType="Integer">		select count('1') from cjhj_users	</select>	<!--查询所有数据的行数cjhj_users -->	<select id="selectUsersCountAll" parameterType="String"		resultMap="cjhj_userss">		select count('1') from cjhj_users	</select>	<!--查询根据条件cjhj_users -->	<select id="selectUserssByPOJO"		parameterType="com.gh.xiangsu.entity.Users" resultMap="cjhj_userss">		select
-		<include refid="Base_Column_List" />
-		from cjhj_users where 1=1		<if test="id != null and id != '' ">			and id = #{id}
-		</if>		<if test="phone != null and phone != '' ">			and phone = #{phone}
-		</if>		<if test="password1 != null and password1 != '' ">			and password1 = #{password1}
-		</if>		<if test="password2 != null and password2 != '' ">			and password2 = #{password2}
-		</if>		<if test="level != null and level != '' ">			and level = #{level}
-		</if>		<if test="pid != null and pid != '' ">			and pid = #{pid}
-		</if>		<if test="isIdcard != null and isIdcard != '' ">			and is_idcard = #{isIdcard}
-		</if>		<if test="regTime != null and regTime != '' ">			and reg_time = #{regTime}
-		</if>		<if test="regIp != null and regIp != '' ">			and reg_ip = #{regIp}
-		</if>		<if test="status != null and status != '' ">			and status = #{status}
-		</if>		<if test="nickname != null and nickname != '' ">			and nickname = #{nickname}
-		</if>		<if test="areacode != null and areacode != '' ">			and areacode = #{areacode}
-		</if>		<if test="idcardName != null and idcardName != '' ">			and idcard_name = #{idcardName}
-		</if>		<if test="idcard != null and idcard != '' ">			and idcard = #{idcard}
-		</if>	</select>
-	<!--查询根据条件查询的行数cjhj_users -->	<select id="selectUserssByPOJOCount"		parameterType="com.gh.xiangsu.entity.Users" resultType="Integer">		select count('1') from cjhj_users where 1=1		<if test="id != null and id != '' ">			and id = #{id}
-		</if>		<if test="phone != null and phone != '' ">			and phone = #{phone}
-		</if>		<if test="password1 != null and password1 != '' ">			and password1 = #{password1}
-		</if>		<if test="password2 != null and password2 != '' ">			and password2 = #{password2}
-		</if>		<if test="level != null and level != '' ">			and level = #{level}
-		</if>		<if test="pid != null and pid != '' ">			and pid = #{pid}
-		</if>		<if test="isIdcard != null and isIdcard != '' ">			and is_idcard = #{isIdcard}
-		</if>		<if test="regTime != null and regTime != '' ">			and reg_time = #{regTime}
-		</if>		<if test="regIp != null and regIp != '' ">			and reg_ip = #{regIp}
-		</if>		<if test="status != null and status != '' ">			and status = #{status}
-		</if>		<if test="nickname != null and nickname != '' ">			and nickname = #{nickname}
-		</if>		<if test="areacode != null and areacode != '' ">			and areacode = #{areacode}
-		</if>		<if test="idcardName != null and idcardName != '' ">			and idcard_name = #{idcardName}
-		</if>		<if test="idcard != null and idcard != '' ">			and idcard = #{idcard}
-		</if>	</select>	<!--查询根据条件分页查询cjhj_users -->	<select id="selectUserssByPojoPage"		parameterType="java.util.Map" resultMap="cjhj_userss">		select		<include refid="Base_Column_List" />		from cjhj_users where 1=1		<if test="pojo.id != null and pojo.id != ''">			and id = #{pojo.id}
-		</if>		<if test="pojo.phone != null and pojo.phone != ''">			and phone = #{pojo.phone}
-		</if>		<if test="pojo.password1 != null and pojo.password1 != ''">			and password1 = #{pojo.password1}
-		</if>		<if test="pojo.password2 != null and pojo.password2 != ''">			and password2 = #{pojo.password2}
-		</if>		<if test="pojo.level != null and pojo.level != ''">			and level = #{pojo.level}
-		</if>		<if test="pojo.pid != null and pojo.pid != ''">			and pid = #{pojo.pid}
-		</if>		<if test="pojo.isIdcard != null and pojo.isIdcard != ''">			and is_idcard = #{pojo.isIdcard}
-		</if>		<if test="pojo.regTime != null and pojo.regTime != ''">			and reg_time = #{pojo.regTime}
-		</if>		<if test="pojo.regIp != null and pojo.regIp != ''">			and reg_ip = #{pojo.regIp}
-		</if>		<if test="pojo.status != null and pojo.status != ''">			and status = #{pojo.status}
-		</if>		<if test="pojo.nickname != null and pojo.nickname != ''">			and nickname = #{pojo.nickname}
-		</if>		<if test="pojo.areacode != null and pojo.areacode != ''">			and areacode = #{pojo.areacode}
-		</if>		<if test="pojo.idcardName != null and pojo.idcardName != ''">			and idcard_name = #{pojo.idcardName}
-		</if>		<if test="pojo.idcard != null and pojo.idcard != ''">			and idcard = #{pojo.idcard}
-		</if>
-
-		limit #{spu.startRow} , #{spu.pageSize}	</select>
-</mapper>
-

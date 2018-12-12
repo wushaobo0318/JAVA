@@ -1,9 +1,10 @@
 package com.frogwallet.core.controller.coin;
 
-import com.frogwallet.base.BaseData;
-import com.frogwallet.common.ResultGenerator;
 import com.frogwallet.core.manager.EthManager;
-import com.frogwallet.exception.ApiException;
+import com.frogwallet.help.base.BaseData;
+import com.frogwallet.help.common.ResultGenerator;
+import com.frogwallet.help.exception.ApiException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

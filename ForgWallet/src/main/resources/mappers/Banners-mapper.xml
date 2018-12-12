@@ -1,93 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.BannersDao">
-
-<resultMap type="com.gh.xiangsu.entity.Banners" id="cjhj_bannerss">
-	<id property  = "id" column= "id"/>
-	<result property  = "url" column= "url"/>
-	<result property  = "isDisplay" column= "is_display"/>
-	<result property  = "time" column= "time"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , url , is_display , time	
-</sql>	
-<!--添加cjhj_banners-->
- <insert id="addBanners" parameterType="com.gh.xiangsu.entity.Banners">                                                                                                                      
- 		insert into cjhj_banners(id,url,is_display,time) values(#{id},#{url},#{isDisplay},#{time})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_banners-->
- <delete id="delBannersTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_banners where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_banners-->
- <update id="updateBanners" parameterType="com.gh.xiangsu.entity.Banners">                                                                                                                                           
-     update cjhj_banners set url = #{url},is_display = #{isDisplay},time = #{time} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_banners-->
- <select id="selectBannersByID" parameterType="String" resultMap="cjhj_bannerss">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_banners where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_banners-->
- <select id="selectBannersCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_banners                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_banners-->
- <select id="selectBannersCountAll" parameterType="String" resultMap="cjhj_bannerss">                                                                                                                                   
-     select count('1') from cjhj_banners                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_banners-->
-<select id="selectBannerssByPOJO" parameterType="com.gh.xiangsu.entity.Banners"  resultMap="cjhj_bannerss">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_banners where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="url != null and url != '' "> 
- and url = #{url} 
-</if>
-	<if test="isDisplay != null and isDisplay != '' "> 
- and is_display = #{isDisplay} 
-</if>
-	<if test="time != null and time != '' "> 
- and time = #{time} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_banners-->
-<select id="selectBannerssByPOJOCount" parameterType="com.gh.xiangsu.entity.Banners"  resultType="Integer">
-	select count('1') from cjhj_banners where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="url != null and url != '' "> 
- and url = #{url} 
-</if>
-	<if test="isDisplay != null and isDisplay != '' "> 
- and is_display = #{isDisplay} 
-</if>
-	<if test="time != null and time != '' "> 
- and time = #{time} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_banners-->
-<select id="selectBannerssByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_bannerss">
-	select <include refid="Base_Column_List" /> from cjhj_banners where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.url != null and pojo.url != ''"> 
- and url = #{pojo.url} 
-</if>
-	<if test="pojo.isDisplay != null and pojo.isDisplay != ''"> 
- and is_display = #{pojo.isDisplay} 
-</if>
-	<if test="pojo.time != null and pojo.time != ''"> 
- and time = #{pojo.time} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

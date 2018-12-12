@@ -1,103 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.AdminRoleNodeDao">
-
-<resultMap type="com.gh.xiangsu.entity.AdminRoleNode" id="admin_role_nodes">
-	<id property  = "roleId" column= "role_id"/>
-	<result property  = "nodeId" column= "node_id"/>
-	<result property  = "level" column= "level"/>
-	<result property  = "pid" column= "pid"/>
-	<result property  = "module" column= "module"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-role_id , node_id , level , pid , module	
-</sql>	
-<!--添加admin_role_node-->
- <insert id="addAdminRoleNode" parameterType="com.gh.xiangsu.entity.AdminRoleNode">                                                                                                                      
- 		insert into admin_role_node(role_id,node_id,level,pid,module) values(#{roleId},#{nodeId},#{level},#{pid},#{module})     
- </insert>                                                                                                                                                                                                                        
-<!--删除admin_role_node-->
- <delete id="delAdminRoleNodeTrue"  parameterType="String">                                                                                                                                                                       
-     delete from admin_role_node where role_id = #{role_id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改admin_role_node-->
- <update id="updateAdminRoleNode" parameterType="com.gh.xiangsu.entity.AdminRoleNode">                                                                                                                                           
-     update admin_role_node set node_id = #{nodeId},level = #{level},pid = #{pid},module = #{module} where role_id = #{roleId} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键admin_role_node-->
- <select id="selectAdminRoleNodeByID" parameterType="String" resultMap="admin_role_nodes">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from admin_role_node where  role_id = #{roleId}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数admin_role_node-->
- <select id="selectAdminRoleNodeCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from admin_role_node                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数admin_role_node-->
- <select id="selectAdminRoleNodeCountAll" parameterType="String" resultMap="admin_role_nodes">                                                                                                                                   
-     select count('1') from admin_role_node                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件admin_role_node-->
-<select id="selectAdminRoleNodesByPOJO" parameterType="com.gh.xiangsu.entity.AdminRoleNode"  resultMap="admin_role_nodes">
-	select 
- <include refid="Base_Column_List" /> 
- from admin_role_node where 1=1 
-	<if test="roleId != null and roleId != '' "> 
- and role_id = #{roleId} 
-</if>
-	<if test="nodeId != null and nodeId != '' "> 
- and node_id = #{nodeId} 
-</if>
-	<if test="level != null and level != '' "> 
- and level = #{level} 
-</if>
-	<if test="pid != null and pid != '' "> 
- and pid = #{pid} 
-</if>
-	<if test="module != null and module != '' "> 
- and module = #{module} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数admin_role_node-->
-<select id="selectAdminRoleNodesByPOJOCount" parameterType="com.gh.xiangsu.entity.AdminRoleNode"  resultType="Integer">
-	select count('1') from admin_role_node where 1=1 
-	<if test="roleId != null and roleId != '' "> 
- and role_id = #{roleId} 
-</if>
-	<if test="nodeId != null and nodeId != '' "> 
- and node_id = #{nodeId} 
-</if>
-	<if test="level != null and level != '' "> 
- and level = #{level} 
-</if>
-	<if test="pid != null and pid != '' "> 
- and pid = #{pid} 
-</if>
-	<if test="module != null and module != '' "> 
- and module = #{module} 
-</if>
-</select>
-<!--查询根据条件分页查询admin_role_node-->
-<select id="selectAdminRoleNodesByPojoPage" parameterType="java.util.Map"  resultMap="admin_role_nodes">
-	select <include refid="Base_Column_List" /> from admin_role_node where 1=1 
-	<if test="pojo.roleId != null and pojo.roleId != ''"> 
- and role_id = #{pojo.roleId} 
-</if>
-	<if test="pojo.nodeId != null and pojo.nodeId != ''"> 
- and node_id = #{pojo.nodeId} 
-</if>
-	<if test="pojo.level != null and pojo.level != ''"> 
- and level = #{pojo.level} 
-</if>
-	<if test="pojo.pid != null and pojo.pid != ''"> 
- and pid = #{pojo.pid} 
-</if>
-	<if test="pojo.module != null and pojo.module != ''"> 
- and module = #{pojo.module} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

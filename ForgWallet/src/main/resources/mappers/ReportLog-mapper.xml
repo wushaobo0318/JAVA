@@ -1,213 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.ReportLogDao">
-
-<resultMap type="com.gh.xiangsu.entity.ReportLog" id="cjhj_report_logs">
-	<id property  = "reportId" column= "report_id"/>
-	<result property  = "ethJl" column= "eth_jl"/>
-	<result property  = "bstJl" column= "bst_jl"/>
-	<result property  = "spgOriginalSum" column= "spg_original_sum"/>
-	<result property  = "spgSum" column= "spg_sum"/>
-	<result property  = "spgPrice" column= "spg_price"/>
-	<result property  = "spgOriginalJl" column= "spg_original_jl"/>
-	<result property  = "spgJl" column= "spg_jl"/>
-	<result property  = "spgPriceJl" column= "spg_price_jl"/>
-	<result property  = "gdOriginalSum" column= "gd_original_sum"/>
-	<result property  = "gdSum" column= "gd_sum"/>
-	<result property  = "gdPriceSum" column= "gd_price_sum"/>
-	<result property  = "hhrSpg" column= "hhr_spg"/>
-	<result property  = "hhrPriceSpg" column= "hhr_price_spg"/>
-	<result property  = "bstpriceSum" column= "bstprice_sum"/>
-	<result property  = "ethpriceSum" column= "ethprice_sum"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-report_id , eth_jl , bst_jl , spg_original_sum , spg_sum , spg_price , spg_original_jl , spg_jl , spg_price_jl , gd_original_sum , gd_sum , gd_price_sum , hhr_spg , hhr_price_spg , bstprice_sum , ethprice_sum	
-</sql>	
-<!--添加cjhj_report_log-->
- <insert id="addReportLog" parameterType="com.gh.xiangsu.entity.ReportLog">                                                                                                                      
- 		insert into cjhj_report_log(report_id,eth_jl,bst_jl,spg_original_sum,spg_sum,spg_price,spg_original_jl,spg_jl,spg_price_jl,gd_original_sum,gd_sum,gd_price_sum,hhr_spg,hhr_price_spg,bstprice_sum,ethprice_sum) values(#{reportId},#{ethJl},#{bstJl},#{spgOriginalSum},#{spgSum},#{spgPrice},#{spgOriginalJl},#{spgJl},#{spgPriceJl},#{gdOriginalSum},#{gdSum},#{gdPriceSum},#{hhrSpg},#{hhrPriceSpg},#{bstpriceSum},#{ethpriceSum})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_report_log-->
- <delete id="delReportLogTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_report_log where report_id = #{report_id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_report_log-->
- <update id="updateReportLog" parameterType="com.gh.xiangsu.entity.ReportLog">                                                                                                                                           
-     update cjhj_report_log set eth_jl = #{ethJl},bst_jl = #{bstJl},spg_original_sum = #{spgOriginalSum},spg_sum = #{spgSum},spg_price = #{spgPrice},spg_original_jl = #{spgOriginalJl},spg_jl = #{spgJl},spg_price_jl = #{spgPriceJl},gd_original_sum = #{gdOriginalSum},gd_sum = #{gdSum},gd_price_sum = #{gdPriceSum},hhr_spg = #{hhrSpg},hhr_price_spg = #{hhrPriceSpg},bstprice_sum = #{bstpriceSum},ethprice_sum = #{ethpriceSum} where report_id = #{reportId} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_report_log-->
- <select id="selectReportLogByID" parameterType="String" resultMap="cjhj_report_logs">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_report_log where  report_id = #{reportId}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_report_log-->
- <select id="selectReportLogCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_report_log                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_report_log-->
- <select id="selectReportLogCountAll" parameterType="String" resultMap="cjhj_report_logs">                                                                                                                                   
-     select count('1') from cjhj_report_log                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_report_log-->
-<select id="selectReportLogsByPOJO" parameterType="com.gh.xiangsu.entity.ReportLog"  resultMap="cjhj_report_logs">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_report_log where 1=1 
-	<if test="reportId != null and reportId != '' "> 
- and report_id = #{reportId} 
-</if>
-	<if test="ethJl != null and ethJl != '' "> 
- and eth_jl = #{ethJl} 
-</if>
-	<if test="bstJl != null and bstJl != '' "> 
- and bst_jl = #{bstJl} 
-</if>
-	<if test="spgOriginalSum != null and spgOriginalSum != '' "> 
- and spg_original_sum = #{spgOriginalSum} 
-</if>
-	<if test="spgSum != null and spgSum != '' "> 
- and spg_sum = #{spgSum} 
-</if>
-	<if test="spgPrice != null and spgPrice != '' "> 
- and spg_price = #{spgPrice} 
-</if>
-	<if test="spgOriginalJl != null and spgOriginalJl != '' "> 
- and spg_original_jl = #{spgOriginalJl} 
-</if>
-	<if test="spgJl != null and spgJl != '' "> 
- and spg_jl = #{spgJl} 
-</if>
-	<if test="spgPriceJl != null and spgPriceJl != '' "> 
- and spg_price_jl = #{spgPriceJl} 
-</if>
-	<if test="gdOriginalSum != null and gdOriginalSum != '' "> 
- and gd_original_sum = #{gdOriginalSum} 
-</if>
-	<if test="gdSum != null and gdSum != '' "> 
- and gd_sum = #{gdSum} 
-</if>
-	<if test="gdPriceSum != null and gdPriceSum != '' "> 
- and gd_price_sum = #{gdPriceSum} 
-</if>
-	<if test="hhrSpg != null and hhrSpg != '' "> 
- and hhr_spg = #{hhrSpg} 
-</if>
-	<if test="hhrPriceSpg != null and hhrPriceSpg != '' "> 
- and hhr_price_spg = #{hhrPriceSpg} 
-</if>
-	<if test="bstpriceSum != null and bstpriceSum != '' "> 
- and bstprice_sum = #{bstpriceSum} 
-</if>
-	<if test="ethpriceSum != null and ethpriceSum != '' "> 
- and ethprice_sum = #{ethpriceSum} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_report_log-->
-<select id="selectReportLogsByPOJOCount" parameterType="com.gh.xiangsu.entity.ReportLog"  resultType="Integer">
-	select count('1') from cjhj_report_log where 1=1 
-	<if test="reportId != null and reportId != '' "> 
- and report_id = #{reportId} 
-</if>
-	<if test="ethJl != null and ethJl != '' "> 
- and eth_jl = #{ethJl} 
-</if>
-	<if test="bstJl != null and bstJl != '' "> 
- and bst_jl = #{bstJl} 
-</if>
-	<if test="spgOriginalSum != null and spgOriginalSum != '' "> 
- and spg_original_sum = #{spgOriginalSum} 
-</if>
-	<if test="spgSum != null and spgSum != '' "> 
- and spg_sum = #{spgSum} 
-</if>
-	<if test="spgPrice != null and spgPrice != '' "> 
- and spg_price = #{spgPrice} 
-</if>
-	<if test="spgOriginalJl != null and spgOriginalJl != '' "> 
- and spg_original_jl = #{spgOriginalJl} 
-</if>
-	<if test="spgJl != null and spgJl != '' "> 
- and spg_jl = #{spgJl} 
-</if>
-	<if test="spgPriceJl != null and spgPriceJl != '' "> 
- and spg_price_jl = #{spgPriceJl} 
-</if>
-	<if test="gdOriginalSum != null and gdOriginalSum != '' "> 
- and gd_original_sum = #{gdOriginalSum} 
-</if>
-	<if test="gdSum != null and gdSum != '' "> 
- and gd_sum = #{gdSum} 
-</if>
-	<if test="gdPriceSum != null and gdPriceSum != '' "> 
- and gd_price_sum = #{gdPriceSum} 
-</if>
-	<if test="hhrSpg != null and hhrSpg != '' "> 
- and hhr_spg = #{hhrSpg} 
-</if>
-	<if test="hhrPriceSpg != null and hhrPriceSpg != '' "> 
- and hhr_price_spg = #{hhrPriceSpg} 
-</if>
-	<if test="bstpriceSum != null and bstpriceSum != '' "> 
- and bstprice_sum = #{bstpriceSum} 
-</if>
-	<if test="ethpriceSum != null and ethpriceSum != '' "> 
- and ethprice_sum = #{ethpriceSum} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_report_log-->
-<select id="selectReportLogsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_report_logs">
-	select <include refid="Base_Column_List" /> from cjhj_report_log where 1=1 
-	<if test="pojo.reportId != null and pojo.reportId != ''"> 
- and report_id = #{pojo.reportId} 
-</if>
-	<if test="pojo.ethJl != null and pojo.ethJl != ''"> 
- and eth_jl = #{pojo.ethJl} 
-</if>
-	<if test="pojo.bstJl != null and pojo.bstJl != ''"> 
- and bst_jl = #{pojo.bstJl} 
-</if>
-	<if test="pojo.spgOriginalSum != null and pojo.spgOriginalSum != ''"> 
- and spg_original_sum = #{pojo.spgOriginalSum} 
-</if>
-	<if test="pojo.spgSum != null and pojo.spgSum != ''"> 
- and spg_sum = #{pojo.spgSum} 
-</if>
-	<if test="pojo.spgPrice != null and pojo.spgPrice != ''"> 
- and spg_price = #{pojo.spgPrice} 
-</if>
-	<if test="pojo.spgOriginalJl != null and pojo.spgOriginalJl != ''"> 
- and spg_original_jl = #{pojo.spgOriginalJl} 
-</if>
-	<if test="pojo.spgJl != null and pojo.spgJl != ''"> 
- and spg_jl = #{pojo.spgJl} 
-</if>
-	<if test="pojo.spgPriceJl != null and pojo.spgPriceJl != ''"> 
- and spg_price_jl = #{pojo.spgPriceJl} 
-</if>
-	<if test="pojo.gdOriginalSum != null and pojo.gdOriginalSum != ''"> 
- and gd_original_sum = #{pojo.gdOriginalSum} 
-</if>
-	<if test="pojo.gdSum != null and pojo.gdSum != ''"> 
- and gd_sum = #{pojo.gdSum} 
-</if>
-	<if test="pojo.gdPriceSum != null and pojo.gdPriceSum != ''"> 
- and gd_price_sum = #{pojo.gdPriceSum} 
-</if>
-	<if test="pojo.hhrSpg != null and pojo.hhrSpg != ''"> 
- and hhr_spg = #{pojo.hhrSpg} 
-</if>
-	<if test="pojo.hhrPriceSpg != null and pojo.hhrPriceSpg != ''"> 
- and hhr_price_spg = #{pojo.hhrPriceSpg} 
-</if>
-	<if test="pojo.bstpriceSum != null and pojo.bstpriceSum != ''"> 
- and bstprice_sum = #{pojo.bstpriceSum} 
-</if>
-	<if test="pojo.ethpriceSum != null and pojo.ethpriceSum != ''"> 
- and ethprice_sum = #{pojo.ethpriceSum} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

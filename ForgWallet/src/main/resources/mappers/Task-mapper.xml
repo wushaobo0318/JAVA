@@ -1,103 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.TaskDao">
-
-<resultMap type="com.gh.xiangsu.entity.Task" id="cjhj_tasks">
-	<id property  = "id" column= "id"/>
-	<result property  = "name" column= "name"/>
-	<result property  = "cron" column= "cron"/>
-	<result property  = "status" column= "status"/>
-	<result property  = "remark" column= "remark"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , name , cron , status , remark	
-</sql>	
-<!--添加cjhj_task-->
- <insert id="addTask" parameterType="com.gh.xiangsu.entity.Task">                                                                                                                      
- 		insert into cjhj_task(id,name,cron,status,remark) values(#{id},#{name},#{cron},#{status},#{remark})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_task-->
- <delete id="delTaskTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_task where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_task-->
- <update id="updateTask" parameterType="com.gh.xiangsu.entity.Task">                                                                                                                                           
-     update cjhj_task set name = #{name},cron = #{cron},status = #{status},remark = #{remark} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_task-->
- <select id="selectTaskByID" parameterType="String" resultMap="cjhj_tasks">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_task where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_task-->
- <select id="selectTaskCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_task                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_task-->
- <select id="selectTaskCountAll" parameterType="String" resultMap="cjhj_tasks">                                                                                                                                   
-     select count('1') from cjhj_task                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_task-->
-<select id="selectTasksByPOJO" parameterType="com.gh.xiangsu.entity.Task"  resultMap="cjhj_tasks">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_task where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="name != null and name != '' "> 
- and name = #{name} 
-</if>
-	<if test="cron != null and cron != '' "> 
- and cron = #{cron} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="remark != null and remark != '' "> 
- and remark = #{remark} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_task-->
-<select id="selectTasksByPOJOCount" parameterType="com.gh.xiangsu.entity.Task"  resultType="Integer">
-	select count('1') from cjhj_task where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="name != null and name != '' "> 
- and name = #{name} 
-</if>
-	<if test="cron != null and cron != '' "> 
- and cron = #{cron} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="remark != null and remark != '' "> 
- and remark = #{remark} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_task-->
-<select id="selectTasksByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_tasks">
-	select <include refid="Base_Column_List" /> from cjhj_task where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.name != null and pojo.name != ''"> 
- and name = #{pojo.name} 
-</if>
-	<if test="pojo.cron != null and pojo.cron != ''"> 
- and cron = #{pojo.cron} 
-</if>
-	<if test="pojo.status != null and pojo.status != ''"> 
- and status = #{pojo.status} 
-</if>
-	<if test="pojo.remark != null and pojo.remark != ''"> 
- and remark = #{pojo.remark} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

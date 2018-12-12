@@ -1,197 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.RecordPurchaseDao">
-
-<resultMap type="com.gh.xiangsu.entity.RecordPurchase" id="cjhj_record_purchases">
-	<id property  = "id" column= "id"/>
-	<result property  = "userId" column= "user_id"/>
-	<result property  = "coin" column= "coin"/>
-	<result property  = "priceCoin" column= "price_coin"/>
-	<result property  = "priceSpg" column= "price_spg"/>
-	<result property  = "num" column= "num"/>
-	<result property  = "discount" column= "discount"/>
-	<result property  = "totalPrice" column= "total_price"/>
-	<result property  = "time" column= "time"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , user_id , coin , price_coin , price_spg , num , discount , total_price , time	
-</sql>	
-<!--添加cjhj_record_purchase-->
- <insert id="addRecordPurchase" parameterType="com.gh.xiangsu.entity.RecordPurchase">                                                                                                                      
- 		insert into cjhj_record_purchase(id,user_id,coin,price_coin,price_spg,num,discount,total_price,time) values(#{id},#{userId},#{coin},#{priceCoin},#{priceSpg},#{num},#{discount},#{totalPrice},#{time})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_record_purchase-->
- <delete id="delRecordPurchaseTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_record_purchase where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_record_purchase-->
- <update id="updateRecordPurchase" parameterType="com.gh.xiangsu.entity.RecordPurchase">                                                                                                                                           
-     update cjhj_record_purchase set user_id = #{userId},coin = #{coin},price_coin = #{priceCoin},price_spg = #{priceSpg},num = #{num},discount = #{discount},total_price = #{totalPrice},time = #{time} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_record_purchase-->
- <select id="selectRecordPurchaseByID" parameterType="String" resultMap="cjhj_record_purchases">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_record_purchase where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_record_purchase-->
- <select id="selectRecordPurchaseCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_record_purchase                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_record_purchase-->
- <select id="selectRecordPurchaseCountAll" parameterType="String" resultMap="cjhj_record_purchases">                                                                                                                                   
-     select count('1') from cjhj_record_purchase                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_record_purchase-->
-<select id="selectRecordPurchasesByPOJO" parameterType="com.gh.xiangsu.entity.RecordPurchase"  resultMap="cjhj_record_purchases">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_record_purchase where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="coin != null and coin != '' "> 
- and coin = #{coin} 
-</if>
-	<if test="priceCoin != null and priceCoin != '' "> 
- and price_coin = #{priceCoin} 
-</if>
-	<if test="priceSpg != null and priceSpg != '' "> 
- and price_spg = #{priceSpg} 
-</if>
-	<if test="num != null and num != '' "> 
- and num = #{num} 
-</if>
-	<if test="discount != null and discount != '' "> 
- and discount = #{discount} 
-</if>
-	<if test="totalPrice != null and totalPrice != '' "> 
- and total_price = #{totalPrice} 
-</if>
-	<if test="time != null and time != '' "> 
- and time = #{time} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_record_purchase-->
-<select id="selectRecordPurchasesByPOJOCount" parameterType="com.gh.xiangsu.entity.RecordPurchase"  resultType="Integer">
-	select count('1') from cjhj_record_purchase where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="coin != null and coin != '' "> 
- and coin = #{coin} 
-</if>
-	<if test="priceCoin != null and priceCoin != '' "> 
- and price_coin = #{priceCoin} 
-</if>
-	<if test="priceSpg != null and priceSpg != '' "> 
- and price_spg = #{priceSpg} 
-</if>
-	<if test="num != null and num != '' "> 
- and num = #{num} 
-</if>
-	<if test="discount != null and discount != '' "> 
- and discount = #{discount} 
-</if>
-	<if test="totalPrice != null and totalPrice != '' "> 
- and total_price = #{totalPrice} 
-</if>
-	<if test="time != null and time != '' "> 
- and time = #{time} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_record_purchase-->
-<select id="selectRecordPurchasesByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_record_purchases">
-	select <include refid="Base_Column_List" /> from cjhj_record_purchase where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-	<if test="pojo.coin != null and pojo.coin != ''"> 
- and coin = #{pojo.coin} 
-</if>
-	<if test="pojo.priceCoin != null and pojo.priceCoin != ''"> 
- and price_coin = #{pojo.priceCoin} 
-</if>
-	<if test="pojo.priceSpg != null and pojo.priceSpg != ''"> 
- and price_spg = #{pojo.priceSpg} 
-</if>
-	<if test="pojo.num != null and pojo.num != ''"> 
- and num = #{pojo.num} 
-</if>
-	<if test="pojo.discount != null and pojo.discount != ''"> 
- and discount = #{pojo.discount} 
-</if>
-	<if test="pojo.totalPrice != null and pojo.totalPrice != ''"> 
- and total_price = #{pojo.totalPrice} 
-</if>
-	<if test="pojo.time != null and pojo.time != ''"> 
- and time &lt; #{pojo.time}	
-</if>
-order by time desc
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-<!-- 按条件查询条数 -->
-	<select id="getListBySeacherPageCount" parameterType="java.util.Map" resultType="int">
-
-		select
-		count(1)
-		from cjhj_record_purchase 
-
-		<where>
-		<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-
-
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-
-
-	<if test="pojo.coin != null and pojo.coin != ''"> 
- and coin = #{pojo.coin} 
-</if>
-
-
-	<if test="pojo.priceCoin != null and pojo.priceCoin != ''"> 
- and price_coin = #{pojo.priceCoin} 
-</if>
-
-
-	<if test="pojo.priceSpg != null and pojo.priceSpg != ''"> 
- and price_spg = #{pojo.priceSpg} 
-</if>
-
-
-	<if test="pojo.num != null and pojo.num != ''"> 
- and num = #{pojo.num} 
-</if>
-
-
-	<if test="pojo.discount != null and pojo.discount != ''"> 
- and discount = #{pojo.discount} 
-</if>
-
-
-	<if test="pojo.totalPrice != null and pojo.totalPrice != ''"> 
- and total_price = #{pojo.totalPrice} 
-</if>
-
-
-	<if test="pojo.time != null and pojo.time != ''"> 
- and time &lt; #{pojo.time} 
-</if>
-		</where>
-		order by time desc
-	</select>
-</mapper>
-

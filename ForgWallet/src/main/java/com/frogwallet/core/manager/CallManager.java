@@ -1,8 +1,9 @@
 package com.frogwallet.core.manager;
 
-import com.frogwallet.common.ResultCode;
-import com.frogwallet.exception.ApiException;
-import com.frogwallet.utils.StringUtil;
+import com.frogwallet.help.common.ResultCode;
+import com.frogwallet.help.exception.ApiException;
+import com.frogwallet.help.utils.StringUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.web3j.abi.FunctionEncoder;

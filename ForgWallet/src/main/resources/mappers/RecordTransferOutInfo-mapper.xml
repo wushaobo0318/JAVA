@@ -1,103 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.RecordTransferOutInfoDao">
-
-<resultMap type="com.gh.xiangsu.entity.RecordTransferOutInfo" id="cjhj_record_transfer_out_infos">
-	<id property  = "id" column= "id"/>
-	<result property  = "transferOutId" column= "transfer_out_id"/>
-	<result property  = "status" column= "status"/>
-	<result property  = "createTime" column= "create_time"/>
-	<result property  = "info" column= "info"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , transfer_out_id , status , create_time , info	
-</sql>	
-<!--添加cjhj_record_transfer_out_info-->
- <insert id="addRecordTransferOutInfo" parameterType="com.gh.xiangsu.entity.RecordTransferOutInfo">                                                                                                                      
- 		insert into cjhj_record_transfer_out_info(id,transfer_out_id,status,create_time,info) values(#{id},#{transferOutId},#{status},#{createTime},#{info})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_record_transfer_out_info-->
- <delete id="delRecordTransferOutInfoTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_record_transfer_out_info where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_record_transfer_out_info-->
- <update id="updateRecordTransferOutInfo" parameterType="com.gh.xiangsu.entity.RecordTransferOutInfo">                                                                                                                                           
-     update cjhj_record_transfer_out_info set transfer_out_id = #{transferOutId},status = #{status},create_time = #{createTime},info = #{info} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_record_transfer_out_info-->
- <select id="selectRecordTransferOutInfoByID" parameterType="String" resultMap="cjhj_record_transfer_out_infos">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_record_transfer_out_info where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_record_transfer_out_info-->
- <select id="selectRecordTransferOutInfoCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_record_transfer_out_info                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_record_transfer_out_info-->
- <select id="selectRecordTransferOutInfoCountAll" parameterType="String" resultMap="cjhj_record_transfer_out_infos">                                                                                                                                   
-     select count('1') from cjhj_record_transfer_out_info                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_record_transfer_out_info-->
-<select id="selectRecordTransferOutInfosByPOJO" parameterType="com.gh.xiangsu.entity.RecordTransferOutInfo"  resultMap="cjhj_record_transfer_out_infos">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_record_transfer_out_info where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="transferOutId != null and transferOutId != '' "> 
- and transfer_out_id = #{transferOutId} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="info != null and info != '' "> 
- and info = #{info} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_record_transfer_out_info-->
-<select id="selectRecordTransferOutInfosByPOJOCount" parameterType="com.gh.xiangsu.entity.RecordTransferOutInfo"  resultType="Integer">
-	select count('1') from cjhj_record_transfer_out_info where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="transferOutId != null and transferOutId != '' "> 
- and transfer_out_id = #{transferOutId} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="info != null and info != '' "> 
- and info = #{info} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_record_transfer_out_info-->
-<select id="selectRecordTransferOutInfosByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_record_transfer_out_infos">
-	select <include refid="Base_Column_List" /> from cjhj_record_transfer_out_info where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.transferOutId != null and pojo.transferOutId != ''"> 
- and transfer_out_id = #{pojo.transferOutId} 
-</if>
-	<if test="pojo.status != null and pojo.status != ''"> 
- and status = #{pojo.status} 
-</if>
-	<if test="pojo.createTime != null and pojo.createTime != ''"> 
- and create_time = #{pojo.createTime} 
-</if>
-	<if test="pojo.info != null and pojo.info != ''"> 
- and info = #{pojo.info} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

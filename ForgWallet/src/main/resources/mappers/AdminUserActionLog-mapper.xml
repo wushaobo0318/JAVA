@@ -1,133 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.AdminUserActionLogDao">
-
-<resultMap type="com.gh.xiangsu.entity.AdminUserActionLog" id="admin_user_action_logs">
-	<id property  = "id" column= "id"/>
-	<result property  = "action" column= "action"/>
-	<result property  = "userId" column= "user_id"/>
-	<result property  = "createTime" column= "create_time"/>
-	<result property  = "attr1" column= "attr1"/>
-	<result property  = "requestData" column= "request_data"/>
-	<result property  = "responseData" column= "response_data"/>
-	<result property  = "ip" column= "ip"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , action , user_id , create_time , attr1 , request_data , response_data , ip	
-</sql>	
-<!--添加admin_user_action_log-->
- <insert id="addAdminUserActionLog" parameterType="com.gh.xiangsu.entity.AdminUserActionLog">                                                                                                                      
- 		insert into admin_user_action_log(id,action,user_id,create_time,attr1,request_data,response_data,ip) values(#{id},#{action},#{userId},#{createTime},#{attr1},#{requestData},#{responseData},#{ip})     
- </insert>                                                                                                                                                                                                                        
-<!--删除admin_user_action_log-->
- <delete id="delAdminUserActionLogTrue"  parameterType="String">                                                                                                                                                                       
-     delete from admin_user_action_log where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改admin_user_action_log-->
- <update id="updateAdminUserActionLog" parameterType="com.gh.xiangsu.entity.AdminUserActionLog">                                                                                                                                           
-     update admin_user_action_log set action = #{action},user_id = #{userId},create_time = #{createTime},attr1 = #{attr1},request_data = #{requestData},response_data = #{responseData},ip = #{ip} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键admin_user_action_log-->
- <select id="selectAdminUserActionLogByID" parameterType="String" resultMap="admin_user_action_logs">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from admin_user_action_log where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数admin_user_action_log-->
- <select id="selectAdminUserActionLogCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from admin_user_action_log                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数admin_user_action_log-->
- <select id="selectAdminUserActionLogCountAll" parameterType="String" resultMap="admin_user_action_logs">                                                                                                                                   
-     select count('1') from admin_user_action_log                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件admin_user_action_log-->
-<select id="selectAdminUserActionLogsByPOJO" parameterType="com.gh.xiangsu.entity.AdminUserActionLog"  resultMap="admin_user_action_logs">
-	select 
- <include refid="Base_Column_List" /> 
- from admin_user_action_log where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="action != null and action != '' "> 
- and action = #{action} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="attr1 != null and attr1 != '' "> 
- and attr1 = #{attr1} 
-</if>
-	<if test="requestData != null and requestData != '' "> 
- and request_data = #{requestData} 
-</if>
-	<if test="responseData != null and responseData != '' "> 
- and response_data = #{responseData} 
-</if>
-	<if test="ip != null and ip != '' "> 
- and ip = #{ip} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数admin_user_action_log-->
-<select id="selectAdminUserActionLogsByPOJOCount" parameterType="com.gh.xiangsu.entity.AdminUserActionLog"  resultType="Integer">
-	select count('1') from admin_user_action_log where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="action != null and action != '' "> 
- and action = #{action} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="createTime != null and createTime != '' "> 
- and create_time = #{createTime} 
-</if>
-	<if test="attr1 != null and attr1 != '' "> 
- and attr1 = #{attr1} 
-</if>
-	<if test="requestData != null and requestData != '' "> 
- and request_data = #{requestData} 
-</if>
-	<if test="responseData != null and responseData != '' "> 
- and response_data = #{responseData} 
-</if>
-	<if test="ip != null and ip != '' "> 
- and ip = #{ip} 
-</if>
-</select>
-<!--查询根据条件分页查询admin_user_action_log-->
-<select id="selectAdminUserActionLogsByPojoPage" parameterType="java.util.Map"  resultMap="admin_user_action_logs">
-	select <include refid="Base_Column_List" /> from admin_user_action_log where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.action != null and pojo.action != ''"> 
- and action = #{pojo.action} 
-</if>
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-	<if test="pojo.createTime != null and pojo.createTime != ''"> 
- and create_time = #{pojo.createTime} 
-</if>
-	<if test="pojo.attr1 != null and pojo.attr1 != ''"> 
- and attr1 = #{pojo.attr1} 
-</if>
-	<if test="pojo.requestData != null and pojo.requestData != ''"> 
- and request_data = #{pojo.requestData} 
-</if>
-	<if test="pojo.responseData != null and pojo.responseData != ''"> 
- and response_data = #{pojo.responseData} 
-</if>
-	<if test="pojo.ip != null and pojo.ip != ''"> 
- and ip = #{pojo.ip} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

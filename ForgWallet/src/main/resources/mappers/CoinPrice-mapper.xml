@@ -1,143 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.CoinPriceDao">
-
-<resultMap type="com.gh.xiangsu.entity.CoinPrice" id="coin_prices">
-	<id property  = "id" column= "id"/>
-	<result property  = "coin" column= "coin"/>
-	<result property  = "price" column= "price"/>
-	<result property  = "change" column= "change"/>
-	<result property  = "updateTime" column= "update_time"/>
-	<result property  = "status" column= "status"/>
-	<result property  = "from" column= "from"/>
-	<result property  = "icon" column= "icon"/>
-	<result property  = "domain" column= "domain"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , coin , price , `change` , update_time , status , `from` , icon , domain	
-</sql>	
-<!--添加coin_price-->
- <insert id="addCoinPrice" parameterType="com.gh.xiangsu.entity.CoinPrice">                                                                                                                      
- 		insert into coin_price(id,coin,price,`change`,update_time,status, `from`,icon,domain) values(#{id},#{coin},#{price},#{change},#{updateTime},#{status},#{from},#{icon},#{domain})     
- </insert>                                                                                                                                                                                                                        
-<!--删除coin_price-->
- <delete id="delCoinPriceTrue"  parameterType="String">                                                                                                                                                                       
-     delete from coin_price where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改coin_price-->
- <update id="updateCoinPrice" parameterType="com.gh.xiangsu.entity.CoinPrice">                                                                                                                                           
-     update coin_price set coin = #{coin},price = #{price},`change` = #{change},update_time = #{updateTime},status = #{status}, `from` = #{from},icon = #{icon},domain = #{domain} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键coin_price-->
- <select id="selectCoinPriceByID" parameterType="String" resultMap="coin_prices">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from coin_price where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数coin_price-->
- <select id="selectCoinPriceCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from coin_price                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数coin_price-->
- <select id="selectCoinPriceCountAll" parameterType="String" resultMap="coin_prices">                                                                                                                                   
-     select count('1') from coin_price                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件coin_price-->
-<select id="selectCoinPricesByPOJO" parameterType="com.gh.xiangsu.entity.CoinPrice"  resultMap="coin_prices">
-	select 
- <include refid="Base_Column_List" /> 
- from coin_price where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="coin != null and coin != '' "> 
- and coin = #{coin} 
-</if>
-	<if test="price != null and price != '' "> 
- and price = #{price} 
-</if>
-	<if test="change != null and change != '' "> 
- and `change` = #{change} 
-</if>
-	<if test="updateTime != null and updateTime != '' "> 
- and update_time = #{updateTime} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="from != null and from != '' "> 
- and  `from` = #{from} 
-</if>
-	<if test="icon != null and icon != '' "> 
- and icon = #{icon} 
-</if>
-	<if test="domain != null and domain != '' "> 
- and domain = #{domain} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数coin_price-->
-<select id="selectCoinPricesByPOJOCount" parameterType="com.gh.xiangsu.entity.CoinPrice"  resultType="Integer">
-	select count('1') from coin_price where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="coin != null and coin != '' "> 
- and coin = #{coin} 
-</if>
-	<if test="price != null and price != '' "> 
- and price = #{price} 
-</if>
-	<if test="change != null and change != '' "> 
- and `change` = #{change} 
-</if>
-	<if test="updateTime != null and updateTime != '' "> 
- and update_time = #{updateTime} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-	<if test="from != null and from != '' "> 
- and  `from` = #{from} 
-</if>
-	<if test="icon != null and icon != '' "> 
- and icon = #{icon} 
-</if>
-	<if test="domain != null and domain != '' "> 
- and domain = #{domain} 
-</if>
-</select>
-<!--查询根据条件分页查询coin_price-->
-<select id="selectCoinPricesByPojoPage" parameterType="java.util.Map"  resultMap="coin_prices">
-	select <include refid="Base_Column_List" /> from coin_price where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.coin != null and pojo.coin != ''"> 
- and coin = #{pojo.coin} 
-</if>
-	<if test="pojo.price != null and pojo.price != ''"> 
- and price = #{pojo.price} 
-</if>
-	<if test="pojo.change != null and pojo.change != ''"> 
- and `change` = #{pojo.change} 
-</if>
-	<if test="pojo.updateTime != null and pojo.updateTime != ''"> 
- and update_time = #{pojo.updateTime} 
-</if>
-	<if test="pojo.status != null and pojo.status != ''"> 
- and status = #{pojo.status} 
-</if>
-	<if test="pojo.from != null and pojo.from != ''"> 
- and  `from` = #{pojo.from} 
-</if>
-	<if test="pojo.icon != null and pojo.icon != ''"> 
- and icon = #{pojo.icon} 
-</if>
-	<if test="pojo.domain != null and pojo.domain != ''"> 
- and domain = #{pojo.domain} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

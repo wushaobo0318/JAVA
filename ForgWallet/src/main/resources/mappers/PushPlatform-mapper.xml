@@ -1,103 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.PushPlatformDao">
-
-<resultMap type="com.gh.xiangsu.entity.PushPlatform" id="cjhj_push_platforms">
-	<id property  = "id" column= "id"/>
-	<result property  = "name" column= "name"/>
-	<result property  = "type" column= "type"/>
-	<result property  = "remark" column= "remark"/>
-	<result property  = "status" column= "status"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-id , name , type , remark , status	
-</sql>	
-<!--添加cjhj_push_platform-->
- <insert id="addPushPlatform" parameterType="com.gh.xiangsu.entity.PushPlatform">                                                                                                                      
- 		insert into cjhj_push_platform(id,name,type,remark,status) values(#{id},#{name},#{type},#{remark},#{status})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_push_platform-->
- <delete id="delPushPlatformTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_push_platform where id = #{id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_push_platform-->
- <update id="updatePushPlatform" parameterType="com.gh.xiangsu.entity.PushPlatform">                                                                                                                                           
-     update cjhj_push_platform set name = #{name},type = #{type},remark = #{remark},status = #{status} where id = #{id} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_push_platform-->
- <select id="selectPushPlatformByID" parameterType="String" resultMap="cjhj_push_platforms">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_push_platform where  id = #{id}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_push_platform-->
- <select id="selectPushPlatformCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_push_platform                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_push_platform-->
- <select id="selectPushPlatformCountAll" parameterType="String" resultMap="cjhj_push_platforms">                                                                                                                                   
-     select count('1') from cjhj_push_platform                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_push_platform-->
-<select id="selectPushPlatformsByPOJO" parameterType="com.gh.xiangsu.entity.PushPlatform"  resultMap="cjhj_push_platforms">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_push_platform where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="name != null and name != '' "> 
- and name = #{name} 
-</if>
-	<if test="type != null and type != '' "> 
- and type = #{type} 
-</if>
-	<if test="remark != null and remark != '' "> 
- and remark = #{remark} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_push_platform-->
-<select id="selectPushPlatformsByPOJOCount" parameterType="com.gh.xiangsu.entity.PushPlatform"  resultType="Integer">
-	select count('1') from cjhj_push_platform where 1=1 
-	<if test="id != null and id != '' "> 
- and id = #{id} 
-</if>
-	<if test="name != null and name != '' "> 
- and name = #{name} 
-</if>
-	<if test="type != null and type != '' "> 
- and type = #{type} 
-</if>
-	<if test="remark != null and remark != '' "> 
- and remark = #{remark} 
-</if>
-	<if test="status != null and status != '' "> 
- and status = #{status} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_push_platform-->
-<select id="selectPushPlatformsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_push_platforms">
-	select <include refid="Base_Column_List" /> from cjhj_push_platform where 1=1 
-	<if test="pojo.id != null and pojo.id != ''"> 
- and id = #{pojo.id} 
-</if>
-	<if test="pojo.name != null and pojo.name != ''"> 
- and name = #{pojo.name} 
-</if>
-	<if test="pojo.type != null and pojo.type != ''"> 
- and type = #{pojo.type} 
-</if>
-	<if test="pojo.remark != null and pojo.remark != ''"> 
- and remark = #{pojo.remark} 
-</if>
-	<if test="pojo.status != null and pojo.status != ''"> 
- and status = #{pojo.status} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-</mapper>
-

@@ -1,126 +1,0 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gh.xiangsu.dao.MiningLogDao">
-
-<resultMap type="com.gh.xiangsu.entity.MiningLog" id="cjhj_mining_logs">
-	<id property  = "logId" column= "log_id"/>
-	<result property  = "userId" column= "user_id"/>
-	<result property  = "miningNum" column= "mining_num"/>
-	<result property  = "miningServerId" column= "mining_server_id"/>
-	<result property  = "miningTime" column= "mining_time"/>
-	<result property  = "isSave" column= "is_save"/>
-</resultMap>
-
-<sql id="Base_Column_List">	
-log_id , user_id , mining_num , mining_server_id , mining_time , is_save	
-</sql>	
-<!--添加cjhj_mining_log-->
- <insert id="addMiningLog" parameterType="com.gh.xiangsu.entity.MiningLog">                                                                                                                      
- 		insert into cjhj_mining_log(log_id,user_id,mining_num,mining_server_id,mining_time,is_save) values(#{logId},#{userId},#{miningNum},#{miningServerId},#{miningTime},#{isSave})     
- </insert>                                                                                                                                                                                                                        
-<!--删除cjhj_mining_log-->
- <delete id="delMiningLogTrue"  parameterType="String">                                                                                                                                                                       
-     delete from cjhj_mining_log where log_id = #{log_id}                                                                                                                                                                                          
- </delete>                                                                                                                                                                                                                        
-<!--修改cjhj_mining_log-->
- <update id="updateMiningLog" parameterType="com.gh.xiangsu.entity.MiningLog">                                                                                                                                           
-     update cjhj_mining_log set user_id = #{userId},mining_num = #{miningNum},mining_server_id = #{miningServerId},mining_time = #{miningTime},is_save = #{isSave} where log_id = #{logId} 
- </update>                                                                                                                                                                                                                        
-<!--查询根据主键cjhj_mining_log-->
- <select id="selectMiningLogByID" parameterType="String" resultMap="cjhj_mining_logs">                                                                                                                                       
-     select  <include refid="Base_Column_List" /> from cjhj_mining_log where  log_id = #{logId}                                                                                                                                                                                    
- </select>                                                                                                                                                                                                                        
-<!--查询所有未删除数据的总行数cjhj_mining_log-->
- <select id="selectMiningLogCount" resultType="Integer">                                                                                                                                                                      
-     select count('1') from cjhj_mining_log                                                                                                                                                                              
- </select>                                                                                                                                                                                                                        
-<!--查询所有数据的行数cjhj_mining_log-->
- <select id="selectMiningLogCountAll" parameterType="String" resultMap="cjhj_mining_logs">                                                                                                                                   
-     select count('1') from cjhj_mining_log                                                                                                                                                                                             
- </select>                                                                                                                                                                                                                        
-<!--查询根据条件cjhj_mining_log-->
-<select id="selectMiningLogsByPOJO" parameterType="com.gh.xiangsu.entity.MiningLog"  resultMap="cjhj_mining_logs">
-	select 
- <include refid="Base_Column_List" /> 
- from cjhj_mining_log where 1=1 
-	<if test="logId != null and logId != '' "> 
- and log_id = #{logId} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="miningNum != null and miningNum != '' "> 
- and mining_num = #{miningNum} 
-</if>
-	<if test="miningServerId != null and miningServerId != '' "> 
- and mining_server_id = #{miningServerId} 
-</if>
-	<if test="miningTime != null and miningTime != '' "> 
- and mining_time = #{miningTime} 
-</if>
-	<if test="isSave != null and isSave != '' "> 
- and is_save = #{isSave} 
-</if>
-
-</select>
-<!--查询根据条件查询的行数cjhj_mining_log-->
-<select id="selectMiningLogsByPOJOCount" parameterType="com.gh.xiangsu.entity.MiningLog"  resultType="Integer">
-	select count('1') from cjhj_mining_log where 1=1 
-	<if test="logId != null and logId != '' "> 
- and log_id = #{logId} 
-</if>
-	<if test="userId != null and userId != '' "> 
- and user_id = #{userId} 
-</if>
-	<if test="miningNum != null and miningNum != '' "> 
- and mining_num = #{miningNum} 
-</if>
-	<if test="miningServerId != null and miningServerId != '' "> 
- and mining_server_id = #{miningServerId} 
-</if>
-	<if test="miningTime != null and miningTime != '' "> 
- and mining_time = #{miningTime} 
-</if>
-	<if test="isSave != null and isSave != '' "> 
- and is_save = #{isSave} 
-</if>
-</select>
-<!--查询根据条件分页查询cjhj_mining_log-->
-<select id="selectMiningLogsByPojoPage" parameterType="java.util.Map"  resultMap="cjhj_mining_logs">
-	select <include refid="Base_Column_List" /> from cjhj_mining_log where 1=1 
-	<if test="pojo.logId != null and pojo.logId != ''"> 
- and log_id = #{pojo.logId} 
-</if>
-	<if test="pojo.userId != null and pojo.userId != ''"> 
- and user_id = #{pojo.userId} 
-</if>
-	<if test="pojo.miningNum != null and pojo.miningNum != ''"> 
- and mining_num = #{pojo.miningNum} 
-</if>
-	<if test="pojo.miningServerId != null and pojo.miningServerId != ''"> 
- and mining_server_id = #{pojo.miningServerId} 
-</if>
-	<if test="pojo.miningTime != null and pojo.miningTime != ''"> 
- and mining_time = #{pojo.miningTime} 
-</if>
-	<if test="pojo.isSave != null and pojo.isSave != ''"> 
- and is_save = #{pojo.isSave} 
-</if>
-
- limit #{spu.startRow} , #{spu.pageSize}
-</select>
-<select id="miningRanking" parameterType="map" resultType="map">
-
-	select user_id,sum(mining_num) total from cjhj_mining_log 
-	<where>
-		<if test="data!=null and data!=''">
-		 and	mining_time =#{data}
-		</if>
-		<if test="userId!=null ">
-		 and 	user_id=#{userId}
-		</if>
-	</where>
-	GROUP BY user_id  ORDER BY total DESC LIMIT 0,10
-</select>
-</mapper>
-
